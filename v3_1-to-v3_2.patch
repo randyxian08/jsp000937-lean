@@ -1,0 +1,41 @@
+--- a/Erdos1153/JSPInterpolation/AllGaps.lean
++++ b/Erdos1153/JSPInterpolation/AllGaps.lean
+@@ -148,7 +148,8 @@
+     rw [Polynomial.degree_X]
+     exact_mod_cast (show (1 : ℕ) < d + 2 by omega)
+   simpa only [Polynomial.eval_X] using
+-    (abs_eval_le_mul_lebesgueFunction nodes Polynomial.X hp a x ha)
++    (abs_eval_le_mul_lebesgueFunction nodes Polynomial.X hp a x
++      (by simpa only [Polynomial.eval_X] using ha))
+ 
+ /-- An explicit compression of the equioscillating pattern attains the
+ all-gap optimum.  No divergent-limit theorem or selection assumption is used. -/
+--- a/Erdos1153/JSPInterpolation/Logarithmic/Chebyshev.lean
++++ b/Erdos1153/JSPInterpolation/Logarithmic/Chebyshev.lean
+@@ -114,7 +114,7 @@
+   rw [T_derivative_eq_U, Polynomial.eval_mul, Polynomial.eval_intCast,
+     Int.cast_natCast, mul_assoc]
+   have hu := U_real_cos θ ((n : ℤ) - 1)
+-  simpa only [sub_add_cancel, Int.cast_natCast] using
++  simpa only [Int.cast_sub, Int.cast_one, sub_add_cancel, Int.cast_natCast] using
+     congrArg (fun z : ℝ => (n : ℝ) * z) hu
+ 
+ lemma abs_derivative_mul_sin_rootAngle {n : ℕ} (hn : 0 < n) (j : Fin n) :
+@@ -179,7 +179,7 @@
+             |Real.cos ((n : ℝ) * θ)| :=
+           mul_le_mul_of_nonneg_right hgeom (abs_nonneg _)
+         _ = _ := by ring
+-    exact (mul_le_mul_right hD).mp hscaled
++    exact le_of_mul_le_mul_right hscaled hD
+ 
+ lemma cos_bound_by_root_distance {n : ℕ} (hn : 0 < n) (j : Fin n) (θ : ℝ) :
+     |Real.cos ((n : ℝ) * θ)| ≤ (n : ℝ) * |θ - rootAngle n j| := by
+@@ -204,7 +204,7 @@
+     have h := (cardinal_angular_weighted hn j θ hθ).trans
+       (mul_le_mul_of_nonneg_left (cos_bound_by_root_distance hn j θ) Real.pi_pos.le)
+     have hpi : |lagrangeFundamental (chebyshevNodes n hn) j (Real.cos θ)| ≤ Real.pi :=
+-      (mul_le_mul_right hW).mp h
++      le_of_mul_le_mul_right h hW
+     linarith
+ 
+ /-- Away from its own node, a cardinal function decays inversely with angle. -/

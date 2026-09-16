@@ -1,0 +1,29 @@
+name: Verify declared Lean scopes
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: leanprover/lean-action@50fcf42d2e460296f1a34b402e990d1b24f8b596 # v1
+        with:
+          build: "false"
+          test: "false"
+      - name: Verify source and axioms
+        shell: bash
+        run: bash verify.sh 2>&1 | tee verification.log
+      - name: Preserve logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: verification-logs
+          path: |
+            verification.log
+            verification-axioms.log
+            verification-axioms.json

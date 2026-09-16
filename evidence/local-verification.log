@@ -1,0 +1,50 @@
+Lean (version 4.27.0, arm64-apple-darwin24.6.0, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)
+Current branch: HEAD
+Using cache (Azure) from origin: leanprover-community/mathlib4
+No files to download
+Decompressing 7869 file(s)
+Unpacked in 7858 ms
+Completed successfully!
+⚠ [3249/3272] Replayed Erdos1153.JSPInterpolation.FreeNodes
+warning: Erdos1153/JSPInterpolation/FreeNodes.lean:176:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Erdos1153/JSPInterpolation/FreeNodes.lean:184:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3253/3272] Replayed Erdos1153.JSPInterpolation.Logarithmic.TrigonometricBounds
+warning: Erdos1153/JSPInterpolation/Logarithmic/TrigonometricBounds.lean:26:37: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Erdos1153/JSPInterpolation/Logarithmic/TrigonometricBounds.lean:26:37: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Erdos1153/JSPInterpolation/Logarithmic/TrigonometricBounds.lean:31:15: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3254/3272] Replayed Erdos1153.JSPInterpolation.Logarithmic.Chebyshev
+warning: Erdos1153/JSPInterpolation/Logarithmic/Chebyshev.lean:88:23: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Erdos1153/JSPInterpolation/Logarithmic/Chebyshev.lean:88:23: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Erdos1153/JSPInterpolation/Logarithmic/Chebyshev.lean:270:29: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Erdos1153/JSPInterpolation/Logarithmic/Chebyshev.lean:270:29: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Build completed successfully (3272 jobs).
+'JSPFreeNodes.jsp_000937' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSPFreeNodes.jsp_000937_logarithmic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSPFreeNodes.allMinPeak_le_explicit_log' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSPFreeNodes.Logarithmic.chebyshev_lebesgueOn_log' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSPFreeNodes.jsp_000936' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSPFreeNodes.jsp_000937' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSPFreeNodes.jsp_000937_logarithmic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSPInterpolation.jsp_000958' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSPInterpolation.jsp_000958_maximum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSPFreeNodes.canonical_allMinPeak_eq_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+All expected theorem axiom reports passed.
+FULL TARGET937 (CLASSIFICATION AND LOGARITHMIC BOUND) PASSED.
