@@ -46,12 +46,16 @@ Install elan, Git and Python 3, then run:
 bash verify.sh
 ```
 
-Lean is pinned to 4.27.0 and Mathlib to v4.27.0, with exact dependencies in
-`lake-manifest.json`. The script builds the modules, checks the full target,
-prints actual axiom reports, checks the allowlist and scans project sources.
+Lean is pinned to 4.33.0 and Mathlib commit
+`db584cd6d46c92f209a44c0f1c829460d327499d`, with exact dependencies in
+`lake-manifest.json`. The script builds the library and final target modules,
+checks the full target, prints actual axiom reports, checks the allowlist,
+replays the final module with `leanchecker`, and scans project sources.
 
-The local verification log for this snapshot is in
-[evidence/local-verification.log](evidence/local-verification.log).
+The earlier 4.27.0 verification log remains in
+[evidence/local-verification.log](evidence/local-verification.log) as historical
+evidence; it does not establish verification of this upgraded snapshot.
+The upgraded snapshot has a separate [Lean 4.33.0 local verification record](evidence/lean433-local-verification.md).
 The final axioms are only `propext`, `Classical.choice`, and `Quot.sound`.
 Local verification uses macOS arm64 and previously built dependencies;
 it is not an independent human review or an independent kernel implementation
