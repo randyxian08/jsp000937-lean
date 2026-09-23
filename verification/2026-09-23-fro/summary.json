@@ -1,0 +1,52 @@
+{
+  "proof_commit": "c6819617f4d8de6afcbf63da31544ce2902f7b6a",
+  "selected_theorems": [
+    "JSPFreeNodes.jsp_000937_one_node",
+    "JSPFreeNodes.jsp_000937_classification",
+    "JSPFreeNodes.jsp_000937_logarithmic",
+    "JSPFreeNodes.jsp_000937"
+  ],
+  "official_audit_script_commit": "bcf1866ea9a4ae82b32bd95b82ffd812b9ee80d2",
+  "official_audit_script_sha256": "5db45dddcb4d588bc27e7c7161fbca5cedaa3e73e1c40843d21f5a214323cd07",
+  "official_audit_status": "standard_axioms_only",
+  "semantic_verdict": "not_determined",
+  "inputs_stable": true,
+  "target_axioms": {
+    "JSPFreeNodes.jsp_000937_one_node": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "JSPFreeNodes.jsp_000937_classification": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "JSPFreeNodes.jsp_000937_logarithmic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "JSPFreeNodes.jsp_000937": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "comparator_commit": "3927ad383f208ae977c340a91c48ac9b497d2097",
+  "exporter_commit": "15f6055e299ad5b89345e533cc2192f4cc00f659",
+  "landrun_commit": "811cfff51ceaf3d9843708aa6d22e9b84ccac8b4",
+  "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d",
+  "lean_toolchain": "leanprover/lean4:v4.33.0",
+  "container_image_id": "sha256:cfd9fb59d279a8be64e7624654f59e5cc15e842fd6744146dbfe9ada2582c45f",
+  "container_network_during_comparison": "disconnected",
+  "comparator_exit_code": 0,
+  "comparator_log_sha256": "fea04c25b962644a5983bc919f51720915cf9d2d81927ffc95ff46143ecd22cf",
+  "external_kernel": "nanoda 0.4.19; accepted the exported solution",
+  "nanoda_commit": "3a2407216ee84a75f9e1aead6803d0578be06ae7",
+  "nanoda_binary_sha256": "566a4951761d02fb6bd76a6d8d450b8afdfc0c9796bd183e9ae70c2826dd4038",
+  "nanoda_comparator_exit_code": 0,
+  "nanoda_comparator_log_sha256": "b157b2f65d275650f838af1cb3073ad42f5b14893b33eaf7f74cbeaa31d82afd",
+  "comparator_log_gzip_sha256": "9740b7dd5ae422a0c8773969b6d3d388f8ab36d49e126440a1e358649dc71f39",
+  "nanoda_comparator_log_gzip_sha256": "c145ee74df0084cf835fc2dfa751e24a12a2961d1829829bf226d0ecf76046cb"
+}

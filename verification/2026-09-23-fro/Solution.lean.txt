@@ -1,0 +1,7 @@
+import Erdos1153.JSPInterpolation.Logarithmic
+
+namespace IndependentChallenge
+
+theorem proof : JSPFreeNodes.Target937 := JSPFreeNodes.jsp_000937
+
+end IndependentChallenge
