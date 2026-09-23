@@ -6,7 +6,7 @@ set_option relaxedAutoImplicit false
 /-! Semantic regression checks: fixing the extreme interpolation nodes to
 -1 and 1 makes the ORIGINAL all-gap objective identically one.  This is
 precisely why the fixed-endpoint internal-gap result must not be substituted
-for JSP-000937. New proof-body candidates; not compiler-verified here. -/
+for JSP-000937. Reproduce the pinned revision's checks with verify.sh. -/
 
 namespace JSPFreeNodes
 open Erdos1153 Erdos1153.DeBoorPinkus

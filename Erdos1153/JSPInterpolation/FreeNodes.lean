@@ -21,9 +21,8 @@ actual maximum, and the actual minimum of the gap maxima are addressed.
 The difficult de Boor--Pinkus theorem is imported from Ethan Yang's pinned
 MIT-licensed project; it is not postulated as a new axiom here.
 
-NEW CODE STATUS: complete proof-body candidate; NOT compiler-verified in
-the authoring environment.  Run the supplied verify.sh before treating
-these declarations as checked Lean theorems.
+Verification for the pinned revision is recorded in README.md. Run the
+supplied verify.sh to reproduce the target and axiom checks.
 -/
 
 namespace JSPFreeNodes

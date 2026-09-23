@@ -13,7 +13,8 @@ proves attainment by an explicitly compressed pattern, and classifies
 all maximizers.  The independent logarithmic-growth request is separately
 named in Definitions.lean; this file does not silently assume that request.
 
-STATUS: newly written proof-body candidate, NOT compiler-verified here.
+Verification for the pinned revision is recorded in README.md and can be
+reproduced with verify.sh.
 -/
 
 namespace JSPFreeNodes

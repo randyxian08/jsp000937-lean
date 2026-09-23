@@ -12,8 +12,8 @@ all n+1 intervals (including both exterior intervals), classification and
 one uniform logarithmic bound for all n >= 2. The one-node classification
 is included in Target937Classification; log(1)=0 is not used as a bound.
 
-This file finally supplies a proof body for BOTH conjuncts. The newly
-supplied source must still pass the pinned compiler and axiom audit.
+This file supplies proof bodies for BOTH conjuncts. Reproduce the pinned
+revision's target and axiom checks with verify.sh.
 -/
 
 namespace JSPFreeNodes
