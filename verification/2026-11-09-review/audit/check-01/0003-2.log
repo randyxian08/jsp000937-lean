@@ -1,0 +1,21 @@
+JSPFreeNodes.jsp_000937_one_node : ∀
+  (nodes : Erdos1153.NodeFamily (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))),
+  JSPFreeNodes.IsOneNodeFullMaximizer nodes
+theorem JSPFreeNodes.jsp_000937_one_node : ∀
+  (nodes : Erdos1153.NodeFamily (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))),
+  JSPFreeNodes.IsOneNodeFullMaximizer nodes :=
+fun (nodes other : Erdos1153.NodeFamily (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))) =>
+  @Trans.trans.{0, 0, 0, 1, 1, 1} Real Real Real (@LE.le.{0} Real Real.instLE) (@Eq.{1} Real)
+    (@LE.le.{0} Real Real.instLE) (@instTransEq_1.{0, 1, 1} Real Real (@LE.le.{0} Real Real.instLE))
+    (JSPFreeNodes.oneNodeAllMinPeak other) (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))
+    (JSPFreeNodes.oneNodeAllMinPeak nodes)
+    (@Trans.trans.{0, 0, 0, 1, 1, 1} Real Real Real (@Eq.{1} Real) (@LE.le.{0} Real Real.instLE)
+      (@LE.le.{0} Real Real.instLE) (@instTransEq.{0, 1, 1} Real Real (@LE.le.{0} Real Real.instLE))
+      (JSPFreeNodes.oneNodeAllMinPeak other) (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))
+      (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))
+      (JSPFreeNodes.oneNodeAllMinPeak_eq_one other)
+      (@le_rfl.{0} Real Real.instPreorder (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))))
+    (@Eq.symm.{1} Real (JSPFreeNodes.oneNodeAllMinPeak nodes)
+      (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))
+      (JSPFreeNodes.oneNodeAllMinPeak_eq_one nodes))
+'JSPFreeNodes.jsp_000937_one_node' depends on axioms: [propext, Classical.choice, Quot.sound]

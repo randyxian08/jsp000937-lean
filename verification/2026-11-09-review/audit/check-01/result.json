@@ -1,0 +1,861 @@
+{
+  "scope": "target_checks_only",
+  "semantic_verdict": "not_determined",
+  "preflight": {
+    "ready_for_target_checks": true,
+    "issues": [],
+    "head": "c6819617f4d8de6afcbf63da31544ce2902f7b6a",
+    "git_status": "?? Erdos1153/Review937.lean\n?? Erdos1153/Review937Specification.lean",
+    "toolchain_file": "leanprover/lean4:v4.33.0",
+    "file_sha256": {
+      "Erdos1153/JSPInterpolation/AllGaps.lean": "eb94a8fa73e7ff871a7290e8b50682b0b547dbd15600a7faf156e95eae56a253",
+      "Erdos1153/JSPInterpolation/Logarithmic.lean": "f0366634858f64104a2f15e8cdca17a7e9ec1fe03b9cdcfb794b170e0a1fa475",
+      "Erdos1153/JSPInterpolation/Regression.lean": "d80045893d0f030236dbdd2e4318bc7d7127cb0b80c1aa5f41ff9a5d9bae36a6",
+      "Erdos1153/Review937.lean": "0973ed4f572061288e6277840e8fa7bb1ac3c367f4c31ef59e73470dfad26709",
+      "lake-manifest.json": "e999c3c65dccf4e7ca4420ee8fee607b3a796ea12be9a8fa9ea6e1f2d4a387e9",
+      "lakefile.lean": null,
+      "lakefile.toml": "f366a0d81319ad8ca4313051aad533aeebe0dea7e192998a2a509d5d0e279e54",
+      "lean-toolchain": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
+    },
+    "manual_preconditions": [
+      "isolation and resource limits established",
+      "clean source build and trusted cache provenance recorded",
+      "actual dependency SHAs match fixed evidence",
+      "tool binaries are trusted and match the pinned toolchain",
+      "all untracked inputs and module/source mappings reviewed"
+    ],
+    "checker_compatibility": "not_probed; inspect pinned checker separately"
+  },
+  "commands": [
+    {
+      "argv": [
+        "/opt/lean/bin/lake",
+        "--version"
+      ],
+      "cwd": "/project",
+      "log": "/audit/check-01/version-0.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 0.12,
+      "log_sha256": "91f4400b78be82a22d826a45a18f024b3121af765a09e1ab07dc76e4f1606676"
+    },
+    {
+      "argv": [
+        "/opt/lean/bin/lake",
+        "env",
+        "lean",
+        "--version"
+      ],
+      "cwd": "/project",
+      "log": "/audit/check-01/version-1.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 4.966,
+      "log_sha256": "68522bc969c5849f4c1a45efaef58ec9aa0b910129bbaca1cadfd204b7e7dc82"
+    },
+    {
+      "argv": [
+        "/opt/lean/bin/lake",
+        "build",
+        "+Erdos1153.JSPInterpolation.Logarithmic"
+      ],
+      "cwd": "/project",
+      "log": "/audit/check-01/0000-0.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 4.827,
+      "log_sha256": "b5676d01266a7874ec4161873ca67d650345041bf0c9d2dd02f4b86263aaabfa"
+    },
+    {
+      "argv": [
+        "/opt/lean/bin/lake",
+        "env",
+        "lean",
+        "/project/Erdos1153/JSPInterpolation/Logarithmic.lean"
+      ],
+      "cwd": "/project",
+      "log": "/audit/check-01/0000-1.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 15.723,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/opt/lean/bin/lake",
+        "env",
+        "lean",
+        "/audit/check-01/Audit0000.lean"
+      ],
+      "cwd": "/project",
+      "log": "/audit/check-01/0000-2.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 18.519,
+      "log_sha256": "5172cc7a46ab26ec981a045411dbf8c5e224b05dcd42e89a1663ca8b10553494"
+    },
+    {
+      "argv": [
+        "/opt/lean/bin/lake",
+        "build",
+        "+Erdos1153.JSPInterpolation.AllGaps"
+      ],
+      "cwd": "/project",
+      "log": "/audit/check-01/0001-0.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 6.258,
+      "log_sha256": "122e7cc8acdbe46969f9bc1112f274c3994e08150d39653ba14a0c6cfa3915d7"
+    },
+    {
+      "argv": [
+        "/opt/lean/bin/lake",
+        "env",
+        "lean",
+        "/project/Erdos1153/JSPInterpolation/AllGaps.lean"
+      ],
+      "cwd": "/project",
+      "log": "/audit/check-01/0001-1.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 16.161,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/opt/lean/bin/lake",
+        "env",
+        "lean",
+        "/audit/check-01/Audit0001.lean"
+      ],
+      "cwd": "/project",
+      "log": "/audit/check-01/0001-2.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 25.409,
+      "log_sha256": "3bbb4b5d5ece6ed8196e8171a6959f60caa3566e74545a3c6a839757ebdbc46c"
+    },
+    {
+      "argv": [
+        "/opt/lean/bin/lake",
+        "build",
+        "+Erdos1153.JSPInterpolation.Logarithmic"
+      ],
+      "cwd": "/project",
+      "log": "/audit/check-01/0002-0.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 9.059,
+      "log_sha256": "52f4b5f051fdb5b92c0a9a9d18cee03d3f35f2ac5c71eb76cd12a7eb89502420"
+    },
+    {
+      "argv": [
+        "/opt/lean/bin/lake",
+        "env",
+        "lean",
+        "/project/Erdos1153/JSPInterpolation/Logarithmic.lean"
+      ],
+      "cwd": "/project",
+      "log": "/audit/check-01/0002-1.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 16.732,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/opt/lean/bin/lake",
+        "env",
+        "lean",
+        "/audit/check-01/Audit0002.lean"
+      ],
+      "cwd": "/project",
+      "log": "/audit/check-01/0002-2.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 17.945,
+      "log_sha256": "e014cf78de4fdc3a47c80fa1e4b270606921a35a07ca4fba1b1531f7acaf6d1b"
+    },
+    {
+      "argv": [
+        "/opt/lean/bin/lake",
+        "build",
+        "+Erdos1153.JSPInterpolation.AllGaps"
+      ],
+      "cwd": "/project",
+      "log": "/audit/check-01/0003-0.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 8.408,
+      "log_sha256": "6984255bad84098360e5b0f70e97e421fe7d9c44e182ff955705d601580efeb5"
+    },
+    {
+      "argv": [
+        "/opt/lean/bin/lake",
+        "env",
+        "lean",
+        "/project/Erdos1153/JSPInterpolation/AllGaps.lean"
+      ],
+      "cwd": "/project",
+      "log": "/audit/check-01/0003-1.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 15.512,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/opt/lean/bin/lake",
+        "env",
+        "lean",
+        "/audit/check-01/Audit0003.lean"
+      ],
+      "cwd": "/project",
+      "log": "/audit/check-01/0003-2.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 19.081,
+      "log_sha256": "3675a382bec240aec2ebe5355d304d482d67e2c061c2fe2dfa3fdabccf319c5e"
+    },
+    {
+      "argv": [
+        "/opt/lean/bin/lake",
+        "build",
+        "+Erdos1153.JSPInterpolation.Regression"
+      ],
+      "cwd": "/project",
+      "log": "/audit/check-01/0004-0.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 7.831,
+      "log_sha256": "871436de426a7030b7653d8ea3184087561db9321fbaf3ec1ecf6659a8b4931b"
+    },
+    {
+      "argv": [
+        "/opt/lean/bin/lake",
+        "env",
+        "lean",
+        "/project/Erdos1153/JSPInterpolation/Regression.lean"
+      ],
+      "cwd": "/project",
+      "log": "/audit/check-01/0004-1.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 16.051,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/opt/lean/bin/lake",
+        "env",
+        "lean",
+        "/audit/check-01/Audit0004.lean"
+      ],
+      "cwd": "/project",
+      "log": "/audit/check-01/0004-2.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 19.129,
+      "log_sha256": "cb2f25882d112d39678965f845d12368812c9eaf3b4728191fcdd441cdb38917"
+    },
+    {
+      "argv": [
+        "/opt/lean/bin/lake",
+        "build",
+        "+Erdos1153.Review937"
+      ],
+      "cwd": "/project",
+      "log": "/audit/check-01/0005-0.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 7.038,
+      "log_sha256": "fbef06a530f43ceb5f2cb5d4c363a9b7a6f09f20b44bbde739393f99fa6cff73"
+    },
+    {
+      "argv": [
+        "/opt/lean/bin/lake",
+        "env",
+        "lean",
+        "/project/Erdos1153/Review937.lean"
+      ],
+      "cwd": "/project",
+      "log": "/audit/check-01/0005-1.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 15.883,
+      "log_sha256": "f939ae8d97f41309f22b5fa8b69fe896d6a30b4ee8284519369db71c8c1a10f7"
+    },
+    {
+      "argv": [
+        "/opt/lean/bin/lake",
+        "env",
+        "lean",
+        "/audit/check-01/Audit0005.lean"
+      ],
+      "cwd": "/project",
+      "log": "/audit/check-01/0005-2.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 20.189,
+      "log_sha256": "cf6e279db0c9699149eacc868b82db0a1ced3e7296445b4cf3fa9a6d94e891f8"
+    },
+    {
+      "argv": [
+        "/opt/lean/bin/lake",
+        "build",
+        "+Erdos1153.Review937"
+      ],
+      "cwd": "/project",
+      "log": "/audit/check-01/0006-0.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 7.454,
+      "log_sha256": "955212a22d03a68abd4c45e798b1d7f29ad10fd8b76174be44fe1c9645a1e60f"
+    },
+    {
+      "argv": [
+        "/opt/lean/bin/lake",
+        "env",
+        "lean",
+        "/project/Erdos1153/Review937.lean"
+      ],
+      "cwd": "/project",
+      "log": "/audit/check-01/0006-1.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 16.005,
+      "log_sha256": "f939ae8d97f41309f22b5fa8b69fe896d6a30b4ee8284519369db71c8c1a10f7"
+    },
+    {
+      "argv": [
+        "/opt/lean/bin/lake",
+        "env",
+        "lean",
+        "/audit/check-01/Audit0006.lean"
+      ],
+      "cwd": "/project",
+      "log": "/audit/check-01/0006-2.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 18.328,
+      "log_sha256": "fbcaba763d1d752f46eeeed74b26197a199bc3f6d9a8043eea8c282d0acb8ef8"
+    },
+    {
+      "argv": [
+        "/opt/lean/bin/lake",
+        "build",
+        "+Erdos1153.Review937"
+      ],
+      "cwd": "/project",
+      "log": "/audit/check-01/0007-0.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 8.146,
+      "log_sha256": "df5b3978f1732677ac11eb80232f6f5ee7c9d0f273852b43d5d13cad927f097a"
+    },
+    {
+      "argv": [
+        "/opt/lean/bin/lake",
+        "env",
+        "lean",
+        "/project/Erdos1153/Review937.lean"
+      ],
+      "cwd": "/project",
+      "log": "/audit/check-01/0007-1.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 14.932,
+      "log_sha256": "f939ae8d97f41309f22b5fa8b69fe896d6a30b4ee8284519369db71c8c1a10f7"
+    },
+    {
+      "argv": [
+        "/opt/lean/bin/lake",
+        "env",
+        "lean",
+        "/audit/check-01/Audit0007.lean"
+      ],
+      "cwd": "/project",
+      "log": "/audit/check-01/0007-2.log",
+      "exit_code": 0,
+      "status": "ok",
+      "seconds": 23.549,
+      "log_sha256": "d80ce23bc66d3a35420721f1f1c95c0cb4be7dcd71393884a9370c4be5ee9c10"
+    }
+  ],
+  "targets": [
+    {
+      "id": "complete",
+      "declaration": "JSPFreeNodes.jsp_000937",
+      "audit_file": "/audit/check-01/Audit0000.lean",
+      "audit_sha256": "cc14b97a650aae0e1efb6fec1ff4dbabaa8d776824ca3c4d3d0a3ccdb0fde2f8",
+      "status": "standard_axioms_only",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "commands": [
+        {
+          "argv": [
+            "/opt/lean/bin/lake",
+            "build",
+            "+Erdos1153.JSPInterpolation.Logarithmic"
+          ],
+          "cwd": "/project",
+          "log": "/audit/check-01/0000-0.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 4.827,
+          "log_sha256": "b5676d01266a7874ec4161873ca67d650345041bf0c9d2dd02f4b86263aaabfa"
+        },
+        {
+          "argv": [
+            "/opt/lean/bin/lake",
+            "env",
+            "lean",
+            "/project/Erdos1153/JSPInterpolation/Logarithmic.lean"
+          ],
+          "cwd": "/project",
+          "log": "/audit/check-01/0000-1.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 15.723,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "/opt/lean/bin/lake",
+            "env",
+            "lean",
+            "/audit/check-01/Audit0000.lean"
+          ],
+          "cwd": "/project",
+          "log": "/audit/check-01/0000-2.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 18.519,
+          "log_sha256": "5172cc7a46ab26ec981a045411dbf8c5e224b05dcd42e89a1663ca8b10553494"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "declaration": "JSPFreeNodes.jsp_000937_classification",
+      "audit_file": "/audit/check-01/Audit0001.lean",
+      "audit_sha256": "d3214a3c5937191eee46aae4f140084b98ec5cf30a744e2c749ba6b0439653d5",
+      "status": "standard_axioms_only",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "commands": [
+        {
+          "argv": [
+            "/opt/lean/bin/lake",
+            "build",
+            "+Erdos1153.JSPInterpolation.AllGaps"
+          ],
+          "cwd": "/project",
+          "log": "/audit/check-01/0001-0.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 6.258,
+          "log_sha256": "122e7cc8acdbe46969f9bc1112f274c3994e08150d39653ba14a0c6cfa3915d7"
+        },
+        {
+          "argv": [
+            "/opt/lean/bin/lake",
+            "env",
+            "lean",
+            "/project/Erdos1153/JSPInterpolation/AllGaps.lean"
+          ],
+          "cwd": "/project",
+          "log": "/audit/check-01/0001-1.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 16.161,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "/opt/lean/bin/lake",
+            "env",
+            "lean",
+            "/audit/check-01/Audit0001.lean"
+          ],
+          "cwd": "/project",
+          "log": "/audit/check-01/0001-2.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 25.409,
+          "log_sha256": "3bbb4b5d5ece6ed8196e8171a6959f60caa3566e74545a3c6a839757ebdbc46c"
+        }
+      ]
+    },
+    {
+      "id": "logarithmic",
+      "declaration": "JSPFreeNodes.jsp_000937_logarithmic",
+      "audit_file": "/audit/check-01/Audit0002.lean",
+      "audit_sha256": "7ded9a71cde11794eed1b051a5aabfa0a52daa1df7d5aaea098809b2b460f4b3",
+      "status": "standard_axioms_only",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "commands": [
+        {
+          "argv": [
+            "/opt/lean/bin/lake",
+            "build",
+            "+Erdos1153.JSPInterpolation.Logarithmic"
+          ],
+          "cwd": "/project",
+          "log": "/audit/check-01/0002-0.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 9.059,
+          "log_sha256": "52f4b5f051fdb5b92c0a9a9d18cee03d3f35f2ac5c71eb76cd12a7eb89502420"
+        },
+        {
+          "argv": [
+            "/opt/lean/bin/lake",
+            "env",
+            "lean",
+            "/project/Erdos1153/JSPInterpolation/Logarithmic.lean"
+          ],
+          "cwd": "/project",
+          "log": "/audit/check-01/0002-1.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 16.732,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "/opt/lean/bin/lake",
+            "env",
+            "lean",
+            "/audit/check-01/Audit0002.lean"
+          ],
+          "cwd": "/project",
+          "log": "/audit/check-01/0002-2.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 17.945,
+          "log_sha256": "e014cf78de4fdc3a47c80fa1e4b270606921a35a07ca4fba1b1531f7acaf6d1b"
+        }
+      ]
+    },
+    {
+      "id": "one-node",
+      "declaration": "JSPFreeNodes.jsp_000937_one_node",
+      "audit_file": "/audit/check-01/Audit0003.lean",
+      "audit_sha256": "4384977be6df3b3585e29ccc93c6b85b2411f2d27e90bfeba27c110696e51c49",
+      "status": "standard_axioms_only",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "commands": [
+        {
+          "argv": [
+            "/opt/lean/bin/lake",
+            "build",
+            "+Erdos1153.JSPInterpolation.AllGaps"
+          ],
+          "cwd": "/project",
+          "log": "/audit/check-01/0003-0.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 8.408,
+          "log_sha256": "6984255bad84098360e5b0f70e97e421fe7d9c44e182ff955705d601580efeb5"
+        },
+        {
+          "argv": [
+            "/opt/lean/bin/lake",
+            "env",
+            "lean",
+            "/project/Erdos1153/JSPInterpolation/AllGaps.lean"
+          ],
+          "cwd": "/project",
+          "log": "/audit/check-01/0003-1.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 15.512,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "/opt/lean/bin/lake",
+            "env",
+            "lean",
+            "/audit/check-01/Audit0003.lean"
+          ],
+          "cwd": "/project",
+          "log": "/audit/check-01/0003-2.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 19.081,
+          "log_sha256": "3675a382bec240aec2ebe5355d304d482d67e2c061c2fe2dfa3fdabccf319c5e"
+        }
+      ]
+    },
+    {
+      "id": "endpoint-regression",
+      "declaration": "JSPFreeNodes.canonical_allMinPeak_eq_one",
+      "audit_file": "/audit/check-01/Audit0004.lean",
+      "audit_sha256": "752a50fa15d08557af340622d03758d21cb2d20570a735a4b41d96a63e636407",
+      "status": "standard_axioms_only",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "commands": [
+        {
+          "argv": [
+            "/opt/lean/bin/lake",
+            "build",
+            "+Erdos1153.JSPInterpolation.Regression"
+          ],
+          "cwd": "/project",
+          "log": "/audit/check-01/0004-0.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 7.831,
+          "log_sha256": "871436de426a7030b7653d8ea3184087561db9321fbaf3ec1ecf6659a8b4931b"
+        },
+        {
+          "argv": [
+            "/opt/lean/bin/lake",
+            "env",
+            "lean",
+            "/project/Erdos1153/JSPInterpolation/Regression.lean"
+          ],
+          "cwd": "/project",
+          "log": "/audit/check-01/0004-1.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 16.051,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "/opt/lean/bin/lake",
+            "env",
+            "lean",
+            "/audit/check-01/Audit0004.lean"
+          ],
+          "cwd": "/project",
+          "log": "/audit/check-01/0004-2.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 19.129,
+          "log_sha256": "cb2f25882d112d39678965f845d12368812c9eaf3b4728191fcdd441cdb38917"
+        }
+      ]
+    },
+    {
+      "id": "literal-objective",
+      "declaration": "Review937.objective_eq",
+      "audit_file": "/audit/check-01/Audit0005.lean",
+      "audit_sha256": "2c43e51bcba5bbbd9c48655211c6e37153181335089ff495ffb99cf8447c3c0d",
+      "status": "standard_axioms_only",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "commands": [
+        {
+          "argv": [
+            "/opt/lean/bin/lake",
+            "build",
+            "+Erdos1153.Review937"
+          ],
+          "cwd": "/project",
+          "log": "/audit/check-01/0005-0.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 7.038,
+          "log_sha256": "fbef06a530f43ceb5f2cb5d4c363a9b7a6f09f20b44bbde739393f99fa6cff73"
+        },
+        {
+          "argv": [
+            "/opt/lean/bin/lake",
+            "env",
+            "lean",
+            "/project/Erdos1153/Review937.lean"
+          ],
+          "cwd": "/project",
+          "log": "/audit/check-01/0005-1.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 15.883,
+          "log_sha256": "f939ae8d97f41309f22b5fa8b69fe896d6a30b4ee8284519369db71c8c1a10f7"
+        },
+        {
+          "argv": [
+            "/opt/lean/bin/lake",
+            "env",
+            "lean",
+            "/audit/check-01/Audit0005.lean"
+          ],
+          "cwd": "/project",
+          "log": "/audit/check-01/0005-2.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 20.189,
+          "log_sha256": "cf6e279db0c9699149eacc868b82db0a1ced3e7296445b4cf3fa9a6d94e891f8"
+        }
+      ]
+    },
+    {
+      "id": "literal-log",
+      "declaration": "Review937.logarithmic_raw",
+      "audit_file": "/audit/check-01/Audit0006.lean",
+      "audit_sha256": "664309e35e676de838227a8b3906527ad193a6576a7d479d00a8cc322ee901be",
+      "status": "standard_axioms_only",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "commands": [
+        {
+          "argv": [
+            "/opt/lean/bin/lake",
+            "build",
+            "+Erdos1153.Review937"
+          ],
+          "cwd": "/project",
+          "log": "/audit/check-01/0006-0.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 7.454,
+          "log_sha256": "955212a22d03a68abd4c45e798b1d7f29ad10fd8b76174be44fe1c9645a1e60f"
+        },
+        {
+          "argv": [
+            "/opt/lean/bin/lake",
+            "env",
+            "lean",
+            "/project/Erdos1153/Review937.lean"
+          ],
+          "cwd": "/project",
+          "log": "/audit/check-01/0006-1.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 16.005,
+          "log_sha256": "f939ae8d97f41309f22b5fa8b69fe896d6a30b4ee8284519369db71c8c1a10f7"
+        },
+        {
+          "argv": [
+            "/opt/lean/bin/lake",
+            "env",
+            "lean",
+            "/audit/check-01/Audit0006.lean"
+          ],
+          "cwd": "/project",
+          "log": "/audit/check-01/0006-2.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 18.328,
+          "log_sha256": "fbcaba763d1d752f46eeeed74b26197a199bc3f6d9a8043eea8c282d0acb8ef8"
+        }
+      ]
+    },
+    {
+      "id": "literal-maximizer",
+      "declaration": "Review937.raw_global_maximizer_iff",
+      "audit_file": "/audit/check-01/Audit0007.lean",
+      "audit_sha256": "48cee5405fc2a0318f3da6d276cd1ef4b358ff09e3d72aacaa131b1484f9bf14",
+      "status": "standard_axioms_only",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "commands": [
+        {
+          "argv": [
+            "/opt/lean/bin/lake",
+            "build",
+            "+Erdos1153.Review937"
+          ],
+          "cwd": "/project",
+          "log": "/audit/check-01/0007-0.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 8.146,
+          "log_sha256": "df5b3978f1732677ac11eb80232f6f5ee7c9d0f273852b43d5d13cad927f097a"
+        },
+        {
+          "argv": [
+            "/opt/lean/bin/lake",
+            "env",
+            "lean",
+            "/project/Erdos1153/Review937.lean"
+          ],
+          "cwd": "/project",
+          "log": "/audit/check-01/0007-1.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 14.932,
+          "log_sha256": "f939ae8d97f41309f22b5fa8b69fe896d6a30b4ee8284519369db71c8c1a10f7"
+        },
+        {
+          "argv": [
+            "/opt/lean/bin/lake",
+            "env",
+            "lean",
+            "/audit/check-01/Audit0007.lean"
+          ],
+          "cwd": "/project",
+          "log": "/audit/check-01/0007-2.log",
+          "exit_code": 0,
+          "status": "ok",
+          "seconds": 23.549,
+          "log_sha256": "d80ce23bc66d3a35420721f1f1c95c0cb4be7dcd71393884a9370c4be5ee9c10"
+        }
+      ]
+    }
+  ],
+  "mechanical_status": "standard_axioms_only",
+  "tool_versions": [
+    "Lake version 5.0.0-src+d8b1897 (Lean version 4.33.0)\n",
+    "Lean (version 4.33.0, aarch64-unknown-linux-gnu, commit d8b18978322de05a8f3dba51ef03cf5461676c17, Release)\n"
+  ],
+  "after": {
+    "ready_for_target_checks": true,
+    "issues": [],
+    "head": "c6819617f4d8de6afcbf63da31544ce2902f7b6a",
+    "git_status": "?? Erdos1153/Review937.lean\n?? Erdos1153/Review937Specification.lean",
+    "toolchain_file": "leanprover/lean4:v4.33.0",
+    "file_sha256": {
+      "Erdos1153/JSPInterpolation/AllGaps.lean": "eb94a8fa73e7ff871a7290e8b50682b0b547dbd15600a7faf156e95eae56a253",
+      "Erdos1153/JSPInterpolation/Logarithmic.lean": "f0366634858f64104a2f15e8cdca17a7e9ec1fe03b9cdcfb794b170e0a1fa475",
+      "Erdos1153/JSPInterpolation/Regression.lean": "d80045893d0f030236dbdd2e4318bc7d7127cb0b80c1aa5f41ff9a5d9bae36a6",
+      "Erdos1153/Review937.lean": "0973ed4f572061288e6277840e8fa7bb1ac3c367f4c31ef59e73470dfad26709",
+      "lake-manifest.json": "e999c3c65dccf4e7ca4420ee8fee607b3a796ea12be9a8fa9ea6e1f2d4a387e9",
+      "lakefile.lean": null,
+      "lakefile.toml": "f366a0d81319ad8ca4313051aad533aeebe0dea7e192998a2a509d5d0e279e54",
+      "lean-toolchain": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
+    },
+    "manual_preconditions": [
+      "isolation and resource limits established",
+      "clean source build and trusted cache provenance recorded",
+      "actual dependency SHAs match fixed evidence",
+      "tool binaries are trusted and match the pinned toolchain",
+      "all untracked inputs and module/source mappings reviewed"
+    ],
+    "checker_compatibility": "not_probed; inspect pinned checker separately"
+  },
+  "inputs_stable": true,
+  "manifest_sha256": "cc90f078414a328be1e3e7bbba9328832d864a786449f31dbc8f93ec58b1b4a5",
+  "script_sha256": "72a3901eea331853dbd65a843cd0b7f7b5b0255240ce1006c2cab1a51ffbea95",
+  "exit_code": 0
+}

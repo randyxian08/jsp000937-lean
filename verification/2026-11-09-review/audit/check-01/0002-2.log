@@ -1,0 +1,39 @@
+JSPFreeNodes.jsp_000937_logarithmic : JSPFreeNodes.Target937Logarithmic
+theorem JSPFreeNodes.jsp_000937_logarithmic : JSPFreeNodes.Target937Logarithmic :=
+@Exists.intro.{1} Real
+  (fun (C : Real) =>
+    And (@LT.lt.{0} Real Real.instLT (@OfNat.ofNat.{0} Real (nat_lit 0) (@Zero.toOfNat0.{0} Real Real.instZero)) C)
+      (∀ (d : Nat)
+        (nodes :
+          Erdos1153.NodeFamily
+            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+              (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))),
+        @LE.le.{0} Real Real.instLE (@JSPFreeNodes.allMinPeak d nodes)
+          (@HMul.hMul.{0, 0, 0} Real Real Real (@instHMul.{0} Real Real.instMul) C
+            (Real.log
+              (@Nat.cast.{0} Real Real.instNatCast
+                (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                  (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))))))
+  JSPFreeNodes.Logarithmic.logConstant
+  (@And.intro
+    (@LT.lt.{0} Real Real.instLT (@OfNat.ofNat.{0} Real (nat_lit 0) (@Zero.toOfNat0.{0} Real Real.instZero))
+      JSPFreeNodes.Logarithmic.logConstant)
+    (∀ (d : Nat)
+      (nodes :
+        Erdos1153.NodeFamily
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+            (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))),
+      @LE.le.{0} Real Real.instLE (@JSPFreeNodes.allMinPeak d nodes)
+        (@HMul.hMul.{0, 0, 0} Real Real Real (@instHMul.{0} Real Real.instMul) JSPFreeNodes.Logarithmic.logConstant
+          (Real.log
+            (@Nat.cast.{0} Real Real.instNatCast
+              (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))))))
+    JSPFreeNodes.Logarithmic.logConstant_pos
+    fun (d : Nat)
+      (nodes :
+        Erdos1153.NodeFamily
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+            (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))) =>
+    @JSPFreeNodes.allMinPeak_le_explicit_log d nodes)
+'JSPFreeNodes.jsp_000937_logarithmic' depends on axioms: [propext, Classical.choice, Quot.sound]

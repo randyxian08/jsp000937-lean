@@ -1,0 +1,21 @@
+{
+  "tracked_lean_files": 86,
+  "all_original_sources_and_pins_unchanged": true,
+  "git_status": "?? Erdos1153/Review937.lean\n?? Erdos1153/Review937Specification.lean\n",
+  "git_diff": "",
+  "automation_exit_code": 0,
+  "mechanical_status": "standard_axioms_only",
+  "target_count": 8,
+  "inputs_stable": true,
+  "leanchecker_exit_code": 0,
+  "audit937_exit_code": 0,
+  "audit_full_exit_code": 0,
+  "initial_orchestration_exit_code": 137,
+  "initial_replay_failure": "OOM kill confirmed by cgroup and Docker",
+  "kernel_retry_env": {
+    "LEAN_NUM_THREADS": "1"
+  },
+  "kernel_log_bytes": 22,
+  "unmodified_build_exit_code": 0,
+  "support_module_build_exit_code": 0
+}

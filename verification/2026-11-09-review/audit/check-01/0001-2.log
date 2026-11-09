@@ -1,0 +1,1307 @@
+JSPFreeNodes.jsp_000937_classification : JSPFreeNodes.Target937Classification
+theorem JSPFreeNodes.jsp_000937_classification : JSPFreeNodes.Target937Classification :=
+@And.intro
+  (∀ (nodes : Erdos1153.NodeFamily (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))),
+    JSPFreeNodes.IsOneNodeFullMaximizer nodes)
+  (∀ (d : Nat),
+    @Exists.{1}
+      (Erdos1153.NodeFamily
+        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+          (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))
+      fun
+        (reference :
+          Erdos1153.NodeFamily
+            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+              (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))) =>
+      And (@JSPFreeNodes.IsNormalizedEquioscillating d reference)
+        (And
+          (@Exists.{1}
+            (Erdos1153.NodeFamily
+              (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))
+            fun
+              (maximizer :
+                Erdos1153.NodeFamily
+                  (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                    (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))) =>
+            And (@JSPFreeNodes.IsFullMaximizer d maximizer)
+              (@Eq.{1} Real (@JSPFreeNodes.allMinPeak d maximizer)
+                (@JSPFreeNodes.amplification
+                  (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                    (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                  reference)))
+          (∀
+            (nodes :
+              Erdos1153.NodeFamily
+                (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                  (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))),
+            And
+              (@LE.le.{0} Real Real.instLE (@JSPFreeNodes.allMinPeak d nodes)
+                (@JSPFreeNodes.amplification
+                  (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                    (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                  reference))
+              (Iff (@JSPFreeNodes.IsFullMaximizer d nodes)
+                (And (@JSPFreeNodes.AdmissibleAffineCopy d reference nodes)
+                  (And
+                    (@LE.le.{0} Real Real.instLE
+                      (@JSPFreeNodes.amplification
+                        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                          (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                        reference)
+                      (@Erdos1153.lebesgueFunction
+                        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                          (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                        nodes
+                        (@Neg.neg.{0} Real Real.instNeg
+                          (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))))
+                    (@LE.le.{0} Real Real.instLE
+                      (@JSPFreeNodes.amplification
+                        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                          (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                        reference)
+                      (@Erdos1153.lebesgueFunction
+                        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                          (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                        nodes (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))))))))))
+  JSPFreeNodes.jsp_000937_one_node fun (d : ⋯) =>
+  @Exists.casesOn.{1}
+    (Erdos1153.DeBoorPinkus.EndpointArray d
+      (@Neg.neg.{0} Real Real.instNeg (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+      (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+    (fun
+        (x :
+          Erdos1153.DeBoorPinkus.EndpointArray d
+            (@Neg.neg.{0} Real Real.instNeg (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+            (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))) =>
+      And
+        ((fun
+              (nodes :
+                Erdos1153.DeBoorPinkus.EndpointArray d
+                  (@Neg.neg.{0} Real Real.instNeg
+                    (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                  (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))) =>
+            @Erdos1153.DeBoorPinkus.Equioscillates d
+              (@Neg.neg.{0} Real Real.instNeg (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+              (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) nodes)
+          x)
+        (∀
+          (y :
+            Erdos1153.DeBoorPinkus.EndpointArray d
+              (@Neg.neg.{0} Real Real.instNeg (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+              (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))),
+          (fun
+                  (nodes :
+                    Erdos1153.DeBoorPinkus.EndpointArray d
+                      (@Neg.neg.{0} Real Real.instNeg
+                        (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                      (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))) =>
+                @Erdos1153.DeBoorPinkus.Equioscillates d
+                  (@Neg.neg.{0} Real Real.instNeg
+                    (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                  (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) nodes)
+              y →
+            @Eq.{1}
+              (Erdos1153.DeBoorPinkus.EndpointArray d
+                (@Neg.neg.{0} Real Real.instNeg
+                  (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+              y x))
+    (fun
+        (x :
+          @ExistsUnique.{1}
+            (Erdos1153.DeBoorPinkus.EndpointArray d
+              (@Neg.neg.{0} Real Real.instNeg (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+              (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+            fun
+              (nodes :
+                Erdos1153.DeBoorPinkus.EndpointArray d
+                  (@Neg.neg.{0} Real Real.instNeg
+                    (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                  (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))) =>
+            @Erdos1153.DeBoorPinkus.Equioscillates d
+              (@Neg.neg.{0} Real Real.instNeg (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+              (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) nodes) =>
+      @Exists.{1}
+        (Erdos1153.NodeFamily
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+            (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))
+        fun
+          (reference :
+            Erdos1153.NodeFamily
+              (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))) =>
+        And (@JSPFreeNodes.IsNormalizedEquioscillating d reference)
+          (And
+            (@Exists.{1}
+              (Erdos1153.NodeFamily
+                (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                  (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))
+              fun
+                (maximizer :
+                  Erdos1153.NodeFamily
+                    (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                      (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))) =>
+              And (@JSPFreeNodes.IsFullMaximizer d maximizer)
+                (@Eq.{1} Real (@JSPFreeNodes.allMinPeak d maximizer)
+                  (@JSPFreeNodes.amplification
+                    (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                      (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                    reference)))
+            (∀
+              (nodes :
+                Erdos1153.NodeFamily
+                  (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                    (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))),
+              And
+                (@LE.le.{0} Real Real.instLE (@JSPFreeNodes.allMinPeak d nodes)
+                  (@JSPFreeNodes.amplification
+                    (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                      (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                    reference))
+                (Iff (@JSPFreeNodes.IsFullMaximizer d nodes)
+                  (And (@JSPFreeNodes.AdmissibleAffineCopy d reference nodes)
+                    (And
+                      (@LE.le.{0} Real Real.instLE
+                        (@JSPFreeNodes.amplification
+                          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                            (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                          reference)
+                        (@Erdos1153.lebesgueFunction
+                          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                            (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                          nodes
+                          (@Neg.neg.{0} Real Real.instNeg
+                            (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))))
+                      (@LE.le.{0} Real Real.instLE
+                        (@JSPFreeNodes.amplification
+                          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                            (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                          reference)
+                        (@Erdos1153.lebesgueFunction
+                          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                            (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                          nodes (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))))))))))
+    (Erdos1153.DeBoorPinkus.existsUniqueEquioscillatingStatement d
+      (@Neg.neg.{0} Real Real.instNeg (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+      (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))
+      (@of_eq_true
+        (And
+          (@LE.le.{0} Real Real.instLE
+            (@Neg.neg.{0} Real Real.instNeg (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+            (@Neg.neg.{0} Real Real.instNeg (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))))
+          (And
+            (@LT.lt.{0} Real Real.instLT
+              (@Neg.neg.{0} Real Real.instNeg (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+              (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+            (@LE.le.{0} Real Real.instLE (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))
+              (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))))
+        (@Eq.trans.{1} Prop
+          (And
+            (@LE.le.{0} Real Real.instLE
+              (@Neg.neg.{0} Real Real.instNeg (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+              (@Neg.neg.{0} Real Real.instNeg
+                (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))))
+            (And
+              (@LT.lt.{0} Real Real.instLT
+                (@Neg.neg.{0} Real Real.instNeg
+                  (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+              (@LE.le.{0} Real Real.instLE (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))
+                (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))))
+          True True
+          (@Eq.trans.{1} Prop
+            (And
+              (@LE.le.{0} Real Real.instLE
+                (@Neg.neg.{0} Real Real.instNeg
+                  (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                (@Neg.neg.{0} Real Real.instNeg
+                  (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))))
+              (And
+                (@LT.lt.{0} Real Real.instLT
+                  (@Neg.neg.{0} Real Real.instNeg
+                    (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                  (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                (@LE.le.{0} Real Real.instLE (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))
+                  (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))))
+            (And True True) True
+            (@congr.{1, 1} Prop Prop
+              (And
+                (@LE.le.{0} Real Real.instLE
+                  (@Neg.neg.{0} Real Real.instNeg
+                    (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                  (@Neg.neg.{0} Real Real.instNeg
+                    (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))))
+              (And True)
+              (And
+                (@LT.lt.{0} Real Real.instLT
+                  (@Neg.neg.{0} Real Real.instNeg
+                    (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                  (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                (@LE.le.{0} Real Real.instLE (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))
+                  (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))))
+              True
+              (@congrArg.{1, 1} Prop ((b : Prop) → Prop)
+                (@LE.le.{0} Real Real.instLE
+                  (@Neg.neg.{0} Real Real.instNeg
+                    (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                  (@Neg.neg.{0} Real Real.instNeg
+                    (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))))
+                True And
+                (@eq_true
+                  (@LE.le.{0} Real Real.instLE
+                    (@Neg.neg.{0} Real Real.instNeg
+                      (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                    (@Neg.neg.{0} Real Real.instNeg
+                      (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))))
+                  (@Mathlib.Meta.NormNum.isInt_le_true.{0} Real Real.instRing Real.partialOrder Real.instIsOrderedRing
+                    (@Neg.neg.{0} Real Real.instNeg
+                      (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                    (@Neg.neg.{0} Real Real.instNeg
+                      (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                    (Int.negOfNat (nat_lit 1)) (Int.negOfNat (nat_lit 1))
+                    (@Mathlib.Meta.NormNum.isInt_neg.{0} Real Real.instRing
+                      (@Neg.neg.{0} Real
+                        (@NegZeroClass.toNeg.{0} Real
+                          (@SubNegZeroMonoid.toNegZeroClass.{0} Real
+                            (@SubtractionMonoid.toSubNegZeroMonoid.{0} Real
+                              (@SubtractionCommMonoid.toSubtractionMonoid.{0} Real
+                                (@AddCommGroup.toDivisionAddCommMonoid.{0} Real
+                                  (@Ring.toAddCommGroup.{0} Real Real.instRing)))))))
+                      (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) (Int.ofNat (nat_lit 1))
+                      (Int.negOfNat (nat_lit 1))
+                      (@Eq.refl.{1} ((a : Real) → Real)
+                        (@Neg.neg.{0} Real
+                          (@NegZeroClass.toNeg.{0} Real
+                            (@SubNegZeroMonoid.toNegZeroClass.{0} Real
+                              (@SubtractionMonoid.toSubNegZeroMonoid.{0} Real
+                                (@SubtractionCommMonoid.toSubtractionMonoid.{0} Real
+                                  (@AddCommGroup.toDivisionAddCommMonoid.{0} Real
+                                    (@Ring.toAddCommGroup.{0} Real Real.instRing))))))))
+                      (@Mathlib.Meta.NormNum.IsNat.to_isInt.{0} Real Real.instRing
+                        (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) (nat_lit 1)
+                        (@Mathlib.Meta.NormNum.isNat_ofNat.{0} Real
+                          (@AddGroupWithOne.toAddMonoidWithOne.{0} Real
+                            (@Ring.toAddGroupWithOne.{0} Real Real.instRing))
+                          (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) (nat_lit 1)
+                          (@Nat.cast_one.{0} Real
+                            (@AddGroupWithOne.toAddMonoidWithOne.{0} Real
+                              (@Ring.toAddGroupWithOne.{0} Real Real.instRing)))))
+                      (@Eq.refl.{1} Int (Int.negOfNat (nat_lit 1))))
+                    (@Mathlib.Meta.NormNum.isInt_neg.{0} Real Real.instRing
+                      (@Neg.neg.{0} Real
+                        (@NegZeroClass.toNeg.{0} Real
+                          (@SubNegZeroMonoid.toNegZeroClass.{0} Real
+                            (@SubtractionMonoid.toSubNegZeroMonoid.{0} Real
+                              (@SubtractionCommMonoid.toSubtractionMonoid.{0} Real
+                                (@AddCommGroup.toDivisionAddCommMonoid.{0} Real
+                                  (@Ring.toAddCommGroup.{0} Real Real.instRing)))))))
+                      (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) (Int.ofNat (nat_lit 1))
+                      (Int.negOfNat (nat_lit 1))
+                      (@Eq.refl.{1} ((a : Real) → Real)
+                        (@Neg.neg.{0} Real
+                          (@NegZeroClass.toNeg.{0} Real
+                            (@SubNegZeroMonoid.toNegZeroClass.{0} Real
+                              (@SubtractionMonoid.toSubNegZeroMonoid.{0} Real
+                                (@SubtractionCommMonoid.toSubtractionMonoid.{0} Real
+                                  (@AddCommGroup.toDivisionAddCommMonoid.{0} Real
+                                    (@Ring.toAddCommGroup.{0} Real Real.instRing))))))))
+                      (@Mathlib.Meta.NormNum.IsNat.to_isInt.{0} Real Real.instRing
+                        (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) (nat_lit 1)
+                        (@Mathlib.Meta.NormNum.isNat_ofNat.{0} Real
+                          (@AddGroupWithOne.toAddMonoidWithOne.{0} Real
+                            (@Ring.toAddGroupWithOne.{0} Real Real.instRing))
+                          (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) (nat_lit 1)
+                          (@Nat.cast_one.{0} Real
+                            (@AddGroupWithOne.toAddMonoidWithOne.{0} Real
+                              (@Ring.toAddGroupWithOne.{0} Real Real.instRing)))))
+                      (@Eq.refl.{1} Int (Int.negOfNat (nat_lit 1))))
+                    (@Eq.refl.{1} Bool Bool.true))))
+              (@Eq.trans.{1} Prop
+                (And
+                  (@LT.lt.{0} Real Real.instLT
+                    (@Neg.neg.{0} Real Real.instNeg
+                      (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                    (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                  (@LE.le.{0} Real Real.instLE (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))
+                    (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))))
+                True True
+                (@Eq.trans.{1} Prop
+                  (And
+                    (@LT.lt.{0} Real Real.instLT
+                      (@Neg.neg.{0} Real Real.instNeg
+                        (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                      (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                    (@LE.le.{0} Real Real.instLE
+                      (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))
+                      (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))))
+                  (And True True) True
+                  (@congr.{1, 1} Prop Prop
+                    (And
+                      (@LT.lt.{0} Real Real.instLT
+                        (@Neg.neg.{0} Real Real.instNeg
+                          (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                        (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))))
+                    (And True)
+                    (@LE.le.{0} Real Real.instLE
+                      (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))
+                      (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                    True
+                    (@congrArg.{1, 1} Prop ((b : Prop) → Prop)
+                      (@LT.lt.{0} Real Real.instLT
+                        (@Neg.neg.{0} Real Real.instNeg
+                          (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                        (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                      True And
+                      (@eq_true
+                        (@LT.lt.{0} Real Real.instLT
+                          (@Neg.neg.{0} Real Real.instNeg
+                            (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                          (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                        (@Mathlib.Meta.NormNum.isInt_lt_true.{0} Real Real.instRing Real.partialOrder
+                          Real.instIsOrderedRing Real.instNontrivial
+                          (@Neg.neg.{0} Real Real.instNeg
+                            (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                          (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))
+                          (Int.negOfNat (nat_lit 1)) (Int.ofNat (nat_lit 1))
+                          (@Mathlib.Meta.NormNum.isInt_neg.{0} Real Real.instRing
+                            (@Neg.neg.{0} Real
+                              (@NegZeroClass.toNeg.{0} Real
+                                (@SubNegZeroMonoid.toNegZeroClass.{0} Real
+                                  (@SubtractionMonoid.toSubNegZeroMonoid.{0} Real
+                                    (@SubtractionCommMonoid.toSubtractionMonoid.{0} Real
+                                      (@AddCommGroup.toDivisionAddCommMonoid.{0} Real
+                                        (@Ring.toAddCommGroup.{0} Real Real.instRing)))))))
+                            (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))
+                            (Int.ofNat (nat_lit 1)) (Int.negOfNat (nat_lit 1))
+                            (@Eq.refl.{1} ((a : Real) → Real)
+                              (@Neg.neg.{0} Real
+                                (@NegZeroClass.toNeg.{0} Real
+                                  (@SubNegZeroMonoid.toNegZeroClass.{0} Real
+                                    (@SubtractionMonoid.toSubNegZeroMonoid.{0} Real
+                                      (@SubtractionCommMonoid.toSubtractionMonoid.{0} Real
+                                        (@AddCommGroup.toDivisionAddCommMonoid.{0} Real
+                                          (@Ring.toAddCommGroup.{0} Real Real.instRing))))))))
+                            (@Mathlib.Meta.NormNum.IsNat.to_isInt.{0} Real Real.instRing
+                              (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) (nat_lit 1)
+                              (@Mathlib.Meta.NormNum.isNat_ofNat.{0} Real
+                                (@AddGroupWithOne.toAddMonoidWithOne.{0} Real
+                                  (@Ring.toAddGroupWithOne.{0} Real Real.instRing))
+                                (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) (nat_lit 1)
+                                (@Nat.cast_one.{0} Real
+                                  (@AddGroupWithOne.toAddMonoidWithOne.{0} Real
+                                    (@Ring.toAddGroupWithOne.{0} Real Real.instRing)))))
+                            (@Eq.refl.{1} Int (Int.negOfNat (nat_lit 1))))
+                          (@Mathlib.Meta.NormNum.IsNat.to_isInt.{0} Real Real.instRing
+                            (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) (nat_lit 1)
+                            (@Mathlib.Meta.NormNum.isNat_ofNat.{0} Real
+                              (@AddGroupWithOne.toAddMonoidWithOne.{0} Real
+                                (@Ring.toAddGroupWithOne.{0} Real Real.instRing))
+                              (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) (nat_lit 1)
+                              (@Nat.cast_one.{0} Real
+                                (@AddGroupWithOne.toAddMonoidWithOne.{0} Real
+                                  (@Ring.toAddGroupWithOne.{0} Real Real.instRing)))))
+                          (@Eq.refl.{1} Bool Bool.true))))
+                    (@eq_true
+                      (@LE.le.{0} Real Real.instLE
+                        (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))
+                        (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                      (@Mathlib.Meta.NormNum.isNat_le_true.{0} Real Real.semiring Real.partialOrder
+                        Real.instIsOrderedRing (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))
+                        (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) (nat_lit 1)
+                        (nat_lit 1)
+                        (@Mathlib.Meta.NormNum.isNat_ofNat.{0} Real
+                          (@AddGroupWithOne.toAddMonoidWithOne.{0} Real
+                            (@Ring.toAddGroupWithOne.{0} Real Real.instRing))
+                          (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) (nat_lit 1)
+                          (@Nat.cast_one.{0} Real
+                            (@AddGroupWithOne.toAddMonoidWithOne.{0} Real
+                              (@Ring.toAddGroupWithOne.{0} Real Real.instRing))))
+                        (@Mathlib.Meta.NormNum.isNat_ofNat.{0} Real
+                          (@AddGroupWithOne.toAddMonoidWithOne.{0} Real
+                            (@Ring.toAddGroupWithOne.{0} Real Real.instRing))
+                          (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) (nat_lit 1)
+                          (@Nat.cast_one.{0} Real
+                            (@AddGroupWithOne.toAddMonoidWithOne.{0} Real
+                              (@Ring.toAddGroupWithOne.{0} Real Real.instRing))))
+                        (@Eq.refl.{1} Bool Bool.true))))
+                  (and_self True))
+                (@eq_true True True.intro)))
+            (and_self True))
+          (@eq_true True True.intro))))
+    fun (opt : ⋯) (h : ⋯) =>
+    @And.casesOn.{0}
+      ((fun
+            (nodes :
+              Erdos1153.DeBoorPinkus.EndpointArray d
+                (@Neg.neg.{0} Real Real.instNeg
+                  (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))) =>
+          @Erdos1153.DeBoorPinkus.Equioscillates d
+            (@Neg.neg.{0} Real Real.instNeg (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+            (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) nodes)
+        opt)
+      (∀
+        (y :
+          Erdos1153.DeBoorPinkus.EndpointArray d
+            (@Neg.neg.{0} Real Real.instNeg (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+            (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))),
+        (fun
+                (nodes :
+                  Erdos1153.DeBoorPinkus.EndpointArray d
+                    (@Neg.neg.{0} Real Real.instNeg
+                      (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                    (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))) =>
+              @Erdos1153.DeBoorPinkus.Equioscillates d
+                (@Neg.neg.{0} Real Real.instNeg
+                  (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) nodes)
+            y →
+          @Eq.{1}
+            (Erdos1153.DeBoorPinkus.EndpointArray d
+              (@Neg.neg.{0} Real Real.instNeg (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+              (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+            y opt)
+      (fun
+          (x :
+            And
+              ((fun
+                    (nodes :
+                      Erdos1153.DeBoorPinkus.EndpointArray d
+                        (@Neg.neg.{0} Real Real.instNeg
+                          (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                        (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))) =>
+                  @Erdos1153.DeBoorPinkus.Equioscillates d
+                    (@Neg.neg.{0} Real Real.instNeg
+                      (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                    (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) nodes)
+                opt)
+              (∀
+                (y :
+                  Erdos1153.DeBoorPinkus.EndpointArray d
+                    (@Neg.neg.{0} Real Real.instNeg
+                      (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                    (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))),
+                (fun
+                        (nodes :
+                          Erdos1153.DeBoorPinkus.EndpointArray d
+                            (@Neg.neg.{0} Real Real.instNeg
+                              (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                            (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))) =>
+                      @Erdos1153.DeBoorPinkus.Equioscillates d
+                        (@Neg.neg.{0} Real Real.instNeg
+                          (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                        (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) nodes)
+                    y →
+                  @Eq.{1}
+                    (Erdos1153.DeBoorPinkus.EndpointArray d
+                      (@Neg.neg.{0} Real Real.instNeg
+                        (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                      (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                    y opt)) =>
+        @Exists.{1}
+          (Erdos1153.NodeFamily
+            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+              (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))
+          fun
+            (reference :
+              Erdos1153.NodeFamily
+                (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                  (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))) =>
+          And (@JSPFreeNodes.IsNormalizedEquioscillating d reference)
+            (And
+              (@Exists.{1}
+                (Erdos1153.NodeFamily
+                  (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                    (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))
+                fun
+                  (maximizer :
+                    Erdos1153.NodeFamily
+                      (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                        (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))) =>
+                And (@JSPFreeNodes.IsFullMaximizer d maximizer)
+                  (@Eq.{1} Real (@JSPFreeNodes.allMinPeak d maximizer)
+                    (@JSPFreeNodes.amplification
+                      (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                        (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                      reference)))
+              (∀
+                (nodes :
+                  Erdos1153.NodeFamily
+                    (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                      (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))),
+                And
+                  (@LE.le.{0} Real Real.instLE (@JSPFreeNodes.allMinPeak d nodes)
+                    (@JSPFreeNodes.amplification
+                      (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                        (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                      reference))
+                  (Iff (@JSPFreeNodes.IsFullMaximizer d nodes)
+                    (And (@JSPFreeNodes.AdmissibleAffineCopy d reference nodes)
+                      (And
+                        (@LE.le.{0} Real Real.instLE
+                          (@JSPFreeNodes.amplification
+                            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                              (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                            reference)
+                          (@Erdos1153.lebesgueFunction
+                            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                              (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                            nodes
+                            (@Neg.neg.{0} Real Real.instNeg
+                              (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))))
+                        (@LE.le.{0} Real Real.instLE
+                          (@JSPFreeNodes.amplification
+                            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                              (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                            reference)
+                          (@Erdos1153.lebesgueFunction
+                            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                              (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                            nodes (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))))))))))
+      h fun (hopt : ⋯) (_hunique : ⋯) =>
+      @Exists.intro.{1}
+        (Erdos1153.NodeFamily
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+            (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))
+        (fun
+            (reference :
+              Erdos1153.NodeFamily
+                (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                  (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))) =>
+          And (@JSPFreeNodes.IsNormalizedEquioscillating d reference)
+            (And
+              (@Exists.{1}
+                (Erdos1153.NodeFamily
+                  (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                    (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))
+                fun
+                  (maximizer :
+                    Erdos1153.NodeFamily
+                      (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                        (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))) =>
+                And (@JSPFreeNodes.IsFullMaximizer d maximizer)
+                  (@Eq.{1} Real (@JSPFreeNodes.allMinPeak d maximizer)
+                    (@JSPFreeNodes.amplification
+                      (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                        (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                      reference)))
+              (∀
+                (nodes :
+                  Erdos1153.NodeFamily
+                    (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                      (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))),
+                And
+                  (@LE.le.{0} Real Real.instLE (@JSPFreeNodes.allMinPeak d nodes)
+                    (@JSPFreeNodes.amplification
+                      (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                        (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                      reference))
+                  (Iff (@JSPFreeNodes.IsFullMaximizer d nodes)
+                    (And (@JSPFreeNodes.AdmissibleAffineCopy d reference nodes)
+                      (And
+                        (@LE.le.{0} Real Real.instLE
+                          (@JSPFreeNodes.amplification
+                            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                              (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                            reference)
+                          (@Erdos1153.lebesgueFunction
+                            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                              (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                            nodes
+                            (@Neg.neg.{0} Real Real.instNeg
+                              (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))))
+                        (@LE.le.{0} Real Real.instLE
+                          (@JSPFreeNodes.amplification
+                            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                              (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                            reference)
+                          (@Erdos1153.lebesgueFunction
+                            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                              (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                            nodes (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))))))))))
+        (@Erdos1153.OrderedNodes.toNodeFamily
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+            (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+          (@Erdos1153.DeBoorPinkus.EndpointArray.toOrderedNodes d
+            (@Neg.neg.{0} Real Real.instNeg (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+            (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt))
+        (@And.intro
+          (@JSPFreeNodes.IsNormalizedEquioscillating d
+            (@Erdos1153.OrderedNodes.toNodeFamily
+              (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+              (@Erdos1153.DeBoorPinkus.EndpointArray.toOrderedNodes d
+                (@Neg.neg.{0} Real Real.instNeg
+                  (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt)))
+          (And
+            (@Exists.{1}
+              (Erdos1153.NodeFamily
+                (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                  (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))
+              fun
+                (maximizer :
+                  Erdos1153.NodeFamily
+                    (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                      (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))) =>
+              And (@JSPFreeNodes.IsFullMaximizer d maximizer)
+                (@Eq.{1} Real (@JSPFreeNodes.allMinPeak d maximizer)
+                  (@JSPFreeNodes.amplification
+                    (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                      (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                    (@Erdos1153.OrderedNodes.toNodeFamily
+                      (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                        (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                      (@Erdos1153.DeBoorPinkus.EndpointArray.toOrderedNodes d
+                        (@Neg.neg.{0} Real Real.instNeg
+                          (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                        (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt)))))
+            (∀
+              (nodes :
+                Erdos1153.NodeFamily
+                  (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                    (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))),
+              And
+                (@LE.le.{0} Real Real.instLE (@JSPFreeNodes.allMinPeak d nodes)
+                  (@JSPFreeNodes.amplification
+                    (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                      (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                    (@Erdos1153.OrderedNodes.toNodeFamily
+                      (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                        (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                      (@Erdos1153.DeBoorPinkus.EndpointArray.toOrderedNodes d
+                        (@Neg.neg.{0} Real Real.instNeg
+                          (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                        (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt))))
+                (Iff (@JSPFreeNodes.IsFullMaximizer d nodes)
+                  (And
+                    (@JSPFreeNodes.AdmissibleAffineCopy d
+                      (@Erdos1153.OrderedNodes.toNodeFamily
+                        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                          (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                        (@Erdos1153.DeBoorPinkus.EndpointArray.toOrderedNodes d
+                          (@Neg.neg.{0} Real Real.instNeg
+                            (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                          (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt))
+                      nodes)
+                    (And
+                      (@LE.le.{0} Real Real.instLE
+                        (@JSPFreeNodes.amplification
+                          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                            (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                          (@Erdos1153.OrderedNodes.toNodeFamily
+                            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                              (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                            (@Erdos1153.DeBoorPinkus.EndpointArray.toOrderedNodes d
+                              (@Neg.neg.{0} Real Real.instNeg
+                                (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                              (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt)))
+                        (@Erdos1153.lebesgueFunction
+                          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                            (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                          nodes
+                          (@Neg.neg.{0} Real Real.instNeg
+                            (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))))
+                      (@LE.le.{0} Real Real.instLE
+                        (@JSPFreeNodes.amplification
+                          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                            (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                          (@Erdos1153.OrderedNodes.toNodeFamily
+                            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                              (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                            (@Erdos1153.DeBoorPinkus.EndpointArray.toOrderedNodes d
+                              (@Neg.neg.{0} Real Real.instNeg
+                                (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                              (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt)))
+                        (@Erdos1153.lebesgueFunction
+                          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                            (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                          nodes (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))))))))
+          (@JSPFreeNodes.canonical_is_normalized d opt hopt)
+          (@And.intro
+            (@Exists.{1}
+              (Erdos1153.NodeFamily
+                (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                  (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))
+              fun
+                (maximizer :
+                  Erdos1153.NodeFamily
+                    (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                      (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))) =>
+              And (@JSPFreeNodes.IsFullMaximizer d maximizer)
+                (@Eq.{1} Real (@JSPFreeNodes.allMinPeak d maximizer)
+                  (@JSPFreeNodes.amplification
+                    (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                      (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                    (@Erdos1153.OrderedNodes.toNodeFamily
+                      (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                        (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                      (@Erdos1153.DeBoorPinkus.EndpointArray.toOrderedNodes d
+                        (@Neg.neg.{0} Real Real.instNeg
+                          (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                        (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt)))))
+            (∀
+              (nodes :
+                Erdos1153.NodeFamily
+                  (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                    (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))),
+              And
+                (@LE.le.{0} Real Real.instLE (@JSPFreeNodes.allMinPeak d nodes)
+                  (@JSPFreeNodes.amplification
+                    (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                      (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                    (@Erdos1153.OrderedNodes.toNodeFamily
+                      (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                        (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                      (@Erdos1153.DeBoorPinkus.EndpointArray.toOrderedNodes d
+                        (@Neg.neg.{0} Real Real.instNeg
+                          (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                        (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt))))
+                (Iff (@JSPFreeNodes.IsFullMaximizer d nodes)
+                  (And
+                    (@JSPFreeNodes.AdmissibleAffineCopy d
+                      (@Erdos1153.OrderedNodes.toNodeFamily
+                        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                          (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                        (@Erdos1153.DeBoorPinkus.EndpointArray.toOrderedNodes d
+                          (@Neg.neg.{0} Real Real.instNeg
+                            (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                          (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt))
+                      nodes)
+                    (And
+                      (@LE.le.{0} Real Real.instLE
+                        (@JSPFreeNodes.amplification
+                          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                            (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                          (@Erdos1153.OrderedNodes.toNodeFamily
+                            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                              (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                            (@Erdos1153.DeBoorPinkus.EndpointArray.toOrderedNodes d
+                              (@Neg.neg.{0} Real Real.instNeg
+                                (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                              (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt)))
+                        (@Erdos1153.lebesgueFunction
+                          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                            (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                          nodes
+                          (@Neg.neg.{0} Real Real.instNeg
+                            (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))))
+                      (@LE.le.{0} Real Real.instLE
+                        (@JSPFreeNodes.amplification
+                          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                            (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                          (@Erdos1153.OrderedNodes.toNodeFamily
+                            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                              (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                            (@Erdos1153.DeBoorPinkus.EndpointArray.toOrderedNodes d
+                              (@Neg.neg.{0} Real Real.instNeg
+                                (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                              (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt)))
+                        (@Erdos1153.lebesgueFunction
+                          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                            (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                          nodes (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))))))))
+            (@Exists.casesOn.{1}
+              (Erdos1153.NodeFamily
+                (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                  (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))
+              (fun
+                  (nodes :
+                    Erdos1153.NodeFamily
+                      (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                        (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))) =>
+                @Eq.{1} Real (@JSPFreeNodes.allMinPeak d nodes)
+                  (@Erdos1153.DeBoorPinkus.EndpointArray.height d
+                    (@Neg.neg.{0} Real Real.instNeg
+                      (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                    (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt
+                    (@OfNat.ofNat.{0}
+                      (Fin
+                        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                          (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+                      (nat_lit 0)
+                      (@Fin.instOfNat
+                        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                          (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+                        (@instNeZeroNatHAdd_1 d (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))
+                          (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0)))))
+                        (nat_lit 0)))))
+              (fun
+                  (x :
+                    @Exists.{1}
+                      (Erdos1153.NodeFamily
+                        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                          (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))
+                      fun
+                        (nodes :
+                          Erdos1153.NodeFamily
+                            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                              (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))) =>
+                      @Eq.{1} Real (@JSPFreeNodes.allMinPeak d nodes)
+                        (@Erdos1153.DeBoorPinkus.EndpointArray.height d
+                          (@Neg.neg.{0} Real Real.instNeg
+                            (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                          (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt
+                          (@OfNat.ofNat.{0}
+                            (Fin
+                              (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                                (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+                            (nat_lit 0)
+                            (@Fin.instOfNat
+                              (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                                (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+                              (@instNeZeroNatHAdd_1 d (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))
+                                (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0)))))
+                              (nat_lit 0))))) =>
+                @Exists.{1}
+                  (Erdos1153.NodeFamily
+                    (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                      (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))
+                  fun
+                    (maximizer :
+                      Erdos1153.NodeFamily
+                        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                          (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))) =>
+                  And (@JSPFreeNodes.IsFullMaximizer d maximizer)
+                    (@Eq.{1} Real (@JSPFreeNodes.allMinPeak d maximizer)
+                      (@JSPFreeNodes.amplification
+                        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                          (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                        (@Erdos1153.OrderedNodes.toNodeFamily
+                          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                            (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                          (@Erdos1153.DeBoorPinkus.EndpointArray.toOrderedNodes d
+                            (@Neg.neg.{0} Real Real.instNeg
+                              (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                            (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt)))))
+              (@JSPFreeNodes.exists_allMinPeak_eq d opt hopt)
+              fun
+                (witness :
+                  Erdos1153.NodeFamily
+                    (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                      (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))
+                (hwitness :
+                  @Eq.{1} Real (@JSPFreeNodes.allMinPeak d witness)
+                    (@Erdos1153.DeBoorPinkus.EndpointArray.height d
+                      (@Neg.neg.{0} Real Real.instNeg
+                        (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                      (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt
+                      (@OfNat.ofNat.{0}
+                        (Fin
+                          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                            (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+                        (nat_lit 0)
+                        (@Fin.instOfNat
+                          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                            (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+                          (@instNeZeroNatHAdd_1 d (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))
+                            (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0)))))
+                          (nat_lit 0))))) =>
+              @Exists.intro.{1}
+                (Erdos1153.NodeFamily
+                  (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                    (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))
+                (fun
+                    (maximizer :
+                      Erdos1153.NodeFamily
+                        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                          (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))) =>
+                  And (@JSPFreeNodes.IsFullMaximizer d maximizer)
+                    (@Eq.{1} Real (@JSPFreeNodes.allMinPeak d maximizer)
+                      (@JSPFreeNodes.amplification
+                        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                          (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                        (@Erdos1153.OrderedNodes.toNodeFamily
+                          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                            (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                          (@Erdos1153.DeBoorPinkus.EndpointArray.toOrderedNodes d
+                            (@Neg.neg.{0} Real Real.instNeg
+                              (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                            (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt)))))
+                witness
+                (@And.intro (@JSPFreeNodes.IsFullMaximizer d witness)
+                  (@Eq.{1} Real (@JSPFreeNodes.allMinPeak d witness)
+                    (@JSPFreeNodes.amplification
+                      (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                        (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                      (@Erdos1153.OrderedNodes.toNodeFamily
+                        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                          (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                        (@Erdos1153.DeBoorPinkus.EndpointArray.toOrderedNodes d
+                          (@Neg.neg.{0} Real Real.instNeg
+                            (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                          (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt))))
+                  (@Iff.mpr (@JSPFreeNodes.IsFullMaximizer d witness)
+                    (@Eq.{1} Real (@JSPFreeNodes.allMinPeak d witness)
+                      (@Erdos1153.DeBoorPinkus.EndpointArray.height d
+                        (@Neg.neg.{0} Real Real.instNeg
+                          (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                        (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt
+                        (@OfNat.ofNat.{0}
+                          (Fin
+                            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                              (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+                          (nat_lit 0)
+                          (@Fin.instOfNat
+                            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                              (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+                            (@instNeZeroNatHAdd_1 d (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))
+                              (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0)))))
+                            (nat_lit 0)))))
+                    (@JSPFreeNodes.full_maximizer_iff_eq d opt hopt witness) hwitness)
+                  (@Eq.mpr.{0}
+                    (@Eq.{1} Real (@JSPFreeNodes.allMinPeak d witness)
+                      (@JSPFreeNodes.amplification
+                        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                          (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                        (@Erdos1153.OrderedNodes.toNodeFamily
+                          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                            (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                          (@Erdos1153.DeBoorPinkus.EndpointArray.toOrderedNodes d
+                            (@Neg.neg.{0} Real Real.instNeg
+                              (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                            (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt))))
+                    (@Eq.{1} Real (@JSPFreeNodes.allMinPeak d witness)
+                      (@Erdos1153.DeBoorPinkus.EndpointArray.height d
+                        (@Neg.neg.{0} Real Real.instNeg
+                          (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                        (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt
+                        (@OfNat.ofNat.{0}
+                          (Fin
+                            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                              (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+                          (nat_lit 0)
+                          (@Fin.instOfNat
+                            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                              (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+                            (@instNeZeroNatHAdd_1 d (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))
+                              (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0)))))
+                            (nat_lit 0)))))
+                    (@id.{0}
+                      (@Eq.{1} Prop
+                        (@Eq.{1} Real (@JSPFreeNodes.allMinPeak d witness)
+                          (@JSPFreeNodes.amplification
+                            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                              (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                            (@Erdos1153.OrderedNodes.toNodeFamily
+                              (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                                (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                              (@Erdos1153.DeBoorPinkus.EndpointArray.toOrderedNodes d
+                                (@Neg.neg.{0} Real Real.instNeg
+                                  (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                                (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt))))
+                        (@Eq.{1} Real (@JSPFreeNodes.allMinPeak d witness)
+                          (@Erdos1153.DeBoorPinkus.EndpointArray.height d
+                            (@Neg.neg.{0} Real Real.instNeg
+                              (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                            (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt
+                            (@OfNat.ofNat.{0}
+                              (Fin
+                                (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                                  (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+                              (nat_lit 0)
+                              (@Fin.instOfNat
+                                (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                                  (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+                                (@instNeZeroNatHAdd_1 d (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))
+                                  (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0)))))
+                                (nat_lit 0))))))
+                      (@congrArg.{1, 1} Real Prop
+                        (@JSPFreeNodes.amplification
+                          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                            (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                          (@Erdos1153.OrderedNodes.toNodeFamily
+                            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                              (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                            (@Erdos1153.DeBoorPinkus.EndpointArray.toOrderedNodes d
+                              (@Neg.neg.{0} Real Real.instNeg
+                                (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                              (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt)))
+                        (@Erdos1153.DeBoorPinkus.EndpointArray.height d
+                          (@Neg.neg.{0} Real Real.instNeg
+                            (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                          (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt
+                          (@OfNat.ofNat.{0}
+                            (Fin
+                              (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                                (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+                            (nat_lit 0)
+                            (@Fin.instOfNat
+                              (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                                (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+                              (@instNeZeroNatHAdd_1 d (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))
+                                (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0)))))
+                              (nat_lit 0))))
+                        (fun (_a : Real) => @Eq.{1} Real (@JSPFreeNodes.allMinPeak d witness) _a)
+                        (@JSPFreeNodes.canonical_amplification d opt hopt)))
+                    hwitness)))
+            fun (nodes : ⋯) =>
+            @Eq.mpr.{0}
+              (And
+                (@LE.le.{0} Real Real.instLE (@JSPFreeNodes.allMinPeak d nodes)
+                  (@JSPFreeNodes.amplification
+                    (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                      (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                    (@Erdos1153.OrderedNodes.toNodeFamily
+                      (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                        (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                      (@Erdos1153.DeBoorPinkus.EndpointArray.toOrderedNodes d
+                        (@Neg.neg.{0} Real Real.instNeg
+                          (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                        (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt))))
+                (Iff (@JSPFreeNodes.IsFullMaximizer d nodes)
+                  (And
+                    (@JSPFreeNodes.AdmissibleAffineCopy d
+                      (@Erdos1153.OrderedNodes.toNodeFamily
+                        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                          (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                        (@Erdos1153.DeBoorPinkus.EndpointArray.toOrderedNodes d
+                          (@Neg.neg.{0} Real Real.instNeg
+                            (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                          (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt))
+                      nodes)
+                    (And
+                      (@LE.le.{0} Real Real.instLE
+                        (@JSPFreeNodes.amplification
+                          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                            (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                          (@Erdos1153.OrderedNodes.toNodeFamily
+                            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                              (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                            (@Erdos1153.DeBoorPinkus.EndpointArray.toOrderedNodes d
+                              (@Neg.neg.{0} Real Real.instNeg
+                                (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                              (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt)))
+                        (@Erdos1153.lebesgueFunction
+                          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                            (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                          nodes
+                          (@Neg.neg.{0} Real Real.instNeg
+                            (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))))
+                      (@LE.le.{0} Real Real.instLE
+                        (@JSPFreeNodes.amplification
+                          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                            (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                          (@Erdos1153.OrderedNodes.toNodeFamily
+                            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                              (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                            (@Erdos1153.DeBoorPinkus.EndpointArray.toOrderedNodes d
+                              (@Neg.neg.{0} Real Real.instNeg
+                                (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                              (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt)))
+                        (@Erdos1153.lebesgueFunction
+                          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                            (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                          nodes (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))))))))
+              (And
+                (@LE.le.{0} Real Real.instLE (@JSPFreeNodes.allMinPeak d nodes)
+                  (@Erdos1153.DeBoorPinkus.EndpointArray.height d
+                    (@Neg.neg.{0} Real Real.instNeg
+                      (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                    (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt
+                    (@OfNat.ofNat.{0}
+                      (Fin
+                        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                          (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+                      (nat_lit 0)
+                      (@Fin.instOfNat
+                        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                          (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+                        (@instNeZeroNatHAdd_1 d (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))
+                          (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0)))))
+                        (nat_lit 0)))))
+                (Iff (@JSPFreeNodes.IsFullMaximizer d nodes)
+                  (And
+                    (@JSPFreeNodes.AdmissibleAffineCopy d
+                      (@Erdos1153.OrderedNodes.toNodeFamily
+                        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                          (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                        (@Erdos1153.DeBoorPinkus.EndpointArray.toOrderedNodes d
+                          (@Neg.neg.{0} Real Real.instNeg
+                            (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                          (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt))
+                      nodes)
+                    (And
+                      (@LE.le.{0} Real Real.instLE
+                        (@Erdos1153.DeBoorPinkus.EndpointArray.height d
+                          (@Neg.neg.{0} Real Real.instNeg
+                            (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                          (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt
+                          (@OfNat.ofNat.{0}
+                            (Fin
+                              (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                                (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+                            (nat_lit 0)
+                            (@Fin.instOfNat
+                              (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                                (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+                              (@instNeZeroNatHAdd_1 d (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))
+                                (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0)))))
+                              (nat_lit 0))))
+                        (@Erdos1153.lebesgueFunction
+                          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                            (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                          nodes
+                          (@Neg.neg.{0} Real Real.instNeg
+                            (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))))
+                      (@LE.le.{0} Real Real.instLE
+                        (@Erdos1153.DeBoorPinkus.EndpointArray.height d
+                          (@Neg.neg.{0} Real Real.instNeg
+                            (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                          (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt
+                          (@OfNat.ofNat.{0}
+                            (Fin
+                              (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                                (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+                            (nat_lit 0)
+                            (@Fin.instOfNat
+                              (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                                (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+                              (@instNeZeroNatHAdd_1 d (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))
+                                (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0)))))
+                              (nat_lit 0))))
+                        (@Erdos1153.lebesgueFunction
+                          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                            (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                          nodes (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))))))))
+              (@id.{0}
+                (@Eq.{1} Prop
+                  (And
+                    (@LE.le.{0} Real Real.instLE (@JSPFreeNodes.allMinPeak d nodes)
+                      (@JSPFreeNodes.amplification
+                        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                          (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                        (@Erdos1153.OrderedNodes.toNodeFamily
+                          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                            (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                          (@Erdos1153.DeBoorPinkus.EndpointArray.toOrderedNodes d
+                            (@Neg.neg.{0} Real Real.instNeg
+                              (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                            (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt))))
+                    (Iff (@JSPFreeNodes.IsFullMaximizer d nodes)
+                      (And
+                        (@JSPFreeNodes.AdmissibleAffineCopy d
+                          (@Erdos1153.OrderedNodes.toNodeFamily
+                            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                              (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                            (@Erdos1153.DeBoorPinkus.EndpointArray.toOrderedNodes d
+                              (@Neg.neg.{0} Real Real.instNeg
+                                (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                              (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt))
+                          nodes)
+                        (And
+                          (@LE.le.{0} Real Real.instLE
+                            (@JSPFreeNodes.amplification
+                              (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                                (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                              (@Erdos1153.OrderedNodes.toNodeFamily
+                                (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                                  (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                                (@Erdos1153.DeBoorPinkus.EndpointArray.toOrderedNodes d
+                                  (@Neg.neg.{0} Real Real.instNeg
+                                    (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                                  (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt)))
+                            (@Erdos1153.lebesgueFunction
+                              (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                                (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                              nodes
+                              (@Neg.neg.{0} Real Real.instNeg
+                                (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))))
+                          (@LE.le.{0} Real Real.instLE
+                            (@JSPFreeNodes.amplification
+                              (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                                (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                              (@Erdos1153.OrderedNodes.toNodeFamily
+                                (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                                  (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                                (@Erdos1153.DeBoorPinkus.EndpointArray.toOrderedNodes d
+                                  (@Neg.neg.{0} Real Real.instNeg
+                                    (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                                  (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt)))
+                            (@Erdos1153.lebesgueFunction
+                              (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                                (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                              nodes (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))))))))
+                  (And
+                    (@LE.le.{0} Real Real.instLE (@JSPFreeNodes.allMinPeak d nodes)
+                      (@Erdos1153.DeBoorPinkus.EndpointArray.height d
+                        (@Neg.neg.{0} Real Real.instNeg
+                          (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                        (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt
+                        (@OfNat.ofNat.{0}
+                          (Fin
+                            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                              (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+                          (nat_lit 0)
+                          (@Fin.instOfNat
+                            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                              (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+                            (@instNeZeroNatHAdd_1 d (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))
+                              (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0)))))
+                            (nat_lit 0)))))
+                    (Iff (@JSPFreeNodes.IsFullMaximizer d nodes)
+                      (And
+                        (@JSPFreeNodes.AdmissibleAffineCopy d
+                          (@Erdos1153.OrderedNodes.toNodeFamily
+                            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                              (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                            (@Erdos1153.DeBoorPinkus.EndpointArray.toOrderedNodes d
+                              (@Neg.neg.{0} Real Real.instNeg
+                                (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                              (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt))
+                          nodes)
+                        (And
+                          (@LE.le.{0} Real Real.instLE
+                            (@Erdos1153.DeBoorPinkus.EndpointArray.height d
+                              (@Neg.neg.{0} Real Real.instNeg
+                                (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                              (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt
+                              (@OfNat.ofNat.{0}
+                                (Fin
+                                  (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                                    (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+                                (nat_lit 0)
+                                (@Fin.instOfNat
+                                  (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                                    (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+                                  (@instNeZeroNatHAdd_1 d (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))
+                                    (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0)))))
+                                  (nat_lit 0))))
+                            (@Erdos1153.lebesgueFunction
+                              (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                                (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                              nodes
+                              (@Neg.neg.{0} Real Real.instNeg
+                                (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))))
+                          (@LE.le.{0} Real Real.instLE
+                            (@Erdos1153.DeBoorPinkus.EndpointArray.height d
+                              (@Neg.neg.{0} Real Real.instNeg
+                                (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))
+                              (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) opt
+                              (@OfNat.ofNat.{0}
+                                (Fin
+                                  (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                                    (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+                                (nat_lit 0)
+                                (@Fin.instOfNat
+                                  (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                                    (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+                                  (@instNeZeroNatHAdd_1 d (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))
+                                    (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0)))))
+                                  (nat_lit 0))))
+                            (@Erdos1153.lebesgueFunction
+                              (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                                (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                              nodes (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))))))))
+                (@congrArg.{1, 1} Real Prop
+                  (@JSPFreeNodes.amplification
+                    (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                      (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                    (@Erdos1153.OrderedNodes.toNodeFamily
+                      (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) d
+                        (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                      (@Erdos1153.DeBoorPinkus.EndpointArray.toOrderedNodes d (@Neg.neg.{0} Real Real.instNeg ⋯) ⋯ ⋯)))
+                  ⋯ ⋯ ⋯))
+              ⋯))
+'JSPFreeNodes.jsp_000937_classification' depends on axioms: [propext, Classical.choice, Quot.sound]

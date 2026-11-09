@@ -1,0 +1,28 @@
+low 0
+high 0
+max 0
+oom 0
+oom_kill 1
+oom_group_kill 0
+3136655360
+test_changed_inputs_cannot_attribute_sorry_to_original_commit (test_audit.AuditTests.test_changed_inputs_cannot_attribute_sorry_to_original_commit) ... ok
+test_identifiers_and_paths_cannot_inject_code (test_audit.AuditTests.test_identifiers_and_paths_cannot_inject_code) ... ok
+test_malformed_json_is_input_error_not_proof_gap (test_audit.AuditTests.test_malformed_json_is_input_error_not_proof_gap) ... audit incomplete: manifest must be a JSON object
+audit incomplete: project must be a JSON object
+ok
+test_missing_and_duplicate_targets_are_rejected (test_audit.AuditTests.test_missing_and_duplicate_targets_are_rejected) ... ok
+test_missing_duplicate_truncated_and_wrong_name_output_fail (test_audit.AuditTests.test_missing_duplicate_truncated_and_wrong_name_output_fail) ... ok
+test_no_overwriting_existing_outputs (test_audit.AuditTests.test_no_overwriting_existing_outputs) ... audit incomplete: output already exists; use a fresh directory
+ok
+test_nonzero_exit_cannot_be_hidden_by_success_text (test_audit.AuditTests.test_nonzero_exit_cannot_be_hidden_by_success_text) ... ok
+test_preflight_does_not_execute_lake_config (test_audit.AuditTests.test_preflight_does_not_execute_lake_config) ... ok
+test_requirement_without_proof_is_preserved (test_audit.AuditTests.test_requirement_without_proof_is_preserved) ... ok
+test_timeout_and_missing_binary_are_incomplete (test_audit.AuditTests.test_timeout_and_missing_binary_are_incomplete) ... ok
+test_transitive_sorry_and_extra_trust_have_different_outcomes (test_audit.AuditTests.test_transitive_sorry_and_extra_trust_have_different_outcomes) ... ok
+test_wrong_lean_version_prevents_target_checks (test_audit.AuditTests.test_wrong_lean_version_prevents_target_checks) ... ok
+test_actual_lean_targets_and_failures (test_audit.LeanIntegrationTests.test_actual_lean_targets_and_failures) ... skipped 'set LEAN_AUDIT_TEST_LAKE for actual Lean checks'
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.070s
+
+OK (skipped=1)

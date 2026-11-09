@@ -1,0 +1,23 @@
+import Mathlib.Analysis.SpecialFunctions.Log.Basic
+import Mathlib.Algebra.BigOperators.Ring.Finset
+
+namespace Review937
+noncomputable section
+open scoped BigOperators
+
+-- Written from the original formula, without submission definitions.
+def literalLambda {n : ℕ} (x : Fin n → ℝ) (t : ℝ) : ℝ :=
+  ∑ k : Fin n, |∏ i ∈ Finset.univ.erase k, (t - x i) / (x k - x i)|
+
+def literalMax {n : ℕ} (x : Fin n → ℝ) (a b : ℝ) : ℝ :=
+  sSup (literalLambda x '' Set.Icc a b)
+
+-- The minimum of two exterior peaks and all n-1 internal peaks.
+def literalU {d : ℕ} (x : Fin (d + 2) → ℝ) : ℝ :=
+  min (literalMax x (-1) (x 0))
+    (min (sInf (Set.range (fun i : Fin (d + 1) =>
+      literalMax x (x i.castSucc) (x i.succ))))
+      (literalMax x (x (Fin.last (d + 1))) 1))
+
+end
+end Review937

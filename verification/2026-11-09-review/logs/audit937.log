@@ -1,0 +1,4 @@
+'JSPFreeNodes.jsp_000937' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSPFreeNodes.jsp_000937_logarithmic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSPFreeNodes.allMinPeak_le_explicit_log' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JSPFreeNodes.Logarithmic.chebyshev_lebesgueOn_log' depends on axioms: [propext, Classical.choice, Quot.sound]

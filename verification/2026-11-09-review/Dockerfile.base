@@ -1,0 +1,7 @@
+FROM debian:13
+RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates curl git unzip zstd xz-utils build-essential python3 && rm -rf /var/lib/apt/lists/*
+RUN useradd --create-home --uid 10001 auditor && mkdir /work && chown auditor:auditor /work
+USER auditor
+ENV HOME=/home/auditor
+ENV PATH=/usr/local/bin:/usr/bin:/bin
+WORKDIR /work

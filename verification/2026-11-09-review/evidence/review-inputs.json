@@ -1,0 +1,28 @@
+{
+  "review_date": "2026-11-09",
+  "original_problem": "https://www.erdosproblems.com/1130",
+  "paper_url": "https://pinkus.net.technion.ac.il/files/2021/02/conj.pdf",
+  "paper_sha256": "fabe52d72dba142d43a2836f6e8c1b441fdfd7ba18b8037cb402d92da7536209",
+  "selected_proof_sha": "c6819617f4d8de6afcbf63da31544ce2902f7b6a",
+  "branch": "main",
+  "observed_branch_tip": "4d7493e7e730597877c38bd750bf02839863b68a",
+  "contained_in_branch": true,
+  "pr": {
+    "url": "https://github.com/TheJustinSunPrize/awards/pull/765",
+    "state": "open",
+    "head_sha": "ed78608840fd05b90d915e5bcdebef242a97614a",
+    "base_sha": "bcf1866ea9a4ae82b32bd95b82ffd812b9ee80d2",
+    "head": "codex/rules-migration-jsp-000937",
+    "base": "main"
+  },
+  "image": "sha256:3a308cfa1f333c7dba5bf75020deb3e60c3429e9fcbc8b8a6dbd495b545499e4",
+  "container_cpus": 3,
+  "configured_memory_bytes": 6442450944,
+  "observed_vm_memory_limit": "3.813 GiB",
+  "user": "10001:10001",
+  "credentials_mounted": false,
+  "network_during_build": "disconnected",
+  "fresh_independent_checker": false,
+  "official_acceptance": false,
+  "upstream_identity_relationship": "unverified; not relied on"
+}

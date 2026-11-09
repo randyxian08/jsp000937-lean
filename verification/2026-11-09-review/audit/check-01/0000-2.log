@@ -1,0 +1,5 @@
+JSPFreeNodes.jsp_000937 : JSPFreeNodes.Target937
+theorem JSPFreeNodes.jsp_000937 : JSPFreeNodes.Target937 :=
+@And.intro JSPFreeNodes.Target937Classification JSPFreeNodes.Target937Logarithmic JSPFreeNodes.jsp_000937_classification
+  JSPFreeNodes.jsp_000937_logarithmic
+'JSPFreeNodes.jsp_000937' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,47 @@
+import Erdos1153.JSPInterpolation.Logarithmic
+import Erdos1153.JSPInterpolation.Regression
+import Erdos1153.Review937Specification
+
+namespace Review937
+open Erdos1153 JSPFreeNodes
+noncomputable section
+
+theorem lambda_eq {n : ℕ} (nodes : NodeFamily n) (t : ℝ) :
+    literalLambda nodes.point t = lebesgueFunction nodes t := rfl
+
+theorem objective_eq {d : ℕ} (nodes : OrderedNodes (d + 2)) :
+    literalU nodes.point = allMinPeak nodes.toNodeFamily := by
+  symm
+  rw [allMinPeak_eq_min]
+  rw [← left_exterior_max, ← right_exterior_max]
+  simp only [minPeak, sorted_of_ordered]
+  rfl
+
+theorem logarithmic_raw (d : ℕ) (x : Fin (d + 2) → ℝ)
+    (hx : StrictMono x) (hmem : ∀ i, x i ∈ Set.Icc (-1 : ℝ) 1) :
+    literalU x ≤ JSPFreeNodes.Logarithmic.logConstant * Real.log ((d + 2 : ℕ) : ℝ) := by
+  let nodes : OrderedNodes (d + 2) :=
+    { point := x, injective := hx.injective, mem_Icc := hmem, strictMono := hx }
+  rw [show literalU x = allMinPeak nodes.toNodeFamily from objective_eq nodes]
+  exact allMinPeak_le_explicit_log nodes.toNodeFamily
+
+theorem raw_global_maximizer_iff {d : ℕ} (nodes : OrderedNodes (d + 2)) :
+    (∀ other : OrderedNodes (d + 2), literalU other.point ≤ literalU nodes.point) ↔
+      IsFullMaximizer nodes.toNodeFamily := by
+  simp only [objective_eq]
+  constructor
+  · intro h other
+    have hs := h other.sorted
+    have hsort : allMinPeak other.sorted.toNodeFamily = allMinPeak other := by
+      rw [allMinPeak_eq_min, allMinPeak_eq_min]
+      simp only [NodeFamily.lebesgueFunction_sorted, minPeak, sorted_of_ordered]
+    rwa [hsort] at hs
+  · intro h other
+    exact h other.toNodeFamily
+
+#print axioms Review937.lambda_eq
+#print axioms Review937.objective_eq
+#print axioms Review937.logarithmic_raw
+#print axioms Review937.raw_global_maximizer_iff
+end
+end Review937

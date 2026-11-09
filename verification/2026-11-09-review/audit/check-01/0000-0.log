@@ -1,0 +1,333 @@
+⚠ [2150/2172] Replayed Erdos1153.Statement
+warning: Erdos1153/Statement.lean:95:8: `continuous_finset_sum` has been deprecated: Use `continuous_finsetSum` instead
+⚠ [2153/2172] Replayed Erdos1153.GapPolynomial
+warning: Erdos1153/GapPolynomial.lean:539:56: `Polynomial.eval_finset_sum` has been deprecated: Use `Polynomial.eval_finsetSum` instead
+warning: Erdos1153/GapPolynomial.lean:555:13: `Polynomial.eval_finset_sum` has been deprecated: Use `Polynomial.eval_finsetSum` instead
+⚠ [2295/2390] Replayed Erdos1153.DeBoorPinkus.GapCritical
+warning: Erdos1153/DeBoorPinkus/GapCritical.lean:249:8: `Polynomial.natDegree_finset_prod_X_sub_C_eq_card` has been deprecated: Use `Polynomial.natDegree_finsetProd_X_sub_C_eq_card` instead
+warning: Erdos1153/DeBoorPinkus/GapCritical.lean:312:86: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Erdos1153/DeBoorPinkus/GapCritical.lean:604:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [2301/2390] Replayed Erdos1153.DeBoorPinkus.Interlacing
+warning: Erdos1153/DeBoorPinkus/Interlacing.lean:442:8: `Polynomial.natDegree_finset_prod_X_sub_C_eq_card` has been deprecated: Use `Polynomial.natDegree_finsetProd_X_sub_C_eq_card` instead
+⚠ [2302/2390] Replayed Erdos1153.DeBoorPinkus.CrossInterlacing
+warning: Erdos1153/DeBoorPinkus/CrossInterlacing.lean:436:14: This simp argument is unused:
+  houtside
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Erdos1153/DeBoorPinkus/CrossInterlacing.lean:662:8: `Polynomial.natDegree_finset_prod_X_sub_C_eq_card` has been deprecated: Use `Polynomial.natDegree_finsetProd_X_sub_C_eq_card` instead
+warning: Erdos1153/DeBoorPinkus/CrossInterlacing.lean:993:8: `Polynomial.natDegree_finset_prod_X_sub_C_eq_card` has been deprecated: Use `Polynomial.natDegree_finsetProd_X_sub_C_eq_card` instead
+warning: Erdos1153/DeBoorPinkus/CrossInterlacing.lean:1393:8: `Polynomial.natDegree_finset_prod_X_sub_C_eq_card` has been deprecated: Use `Polynomial.natDegree_finsetProd_X_sub_C_eq_card` instead
+⚠ [2311/2390] Replayed Erdos1153.DeBoorPinkus.DerivativeInterlacing
+warning: Erdos1153/DeBoorPinkus/DerivativeInterlacing.lean:226:28: `Polynomial.natDegree_finset_prod_X_sub_C_eq_card` has been deprecated: Use `Polynomial.natDegree_finsetProd_X_sub_C_eq_card` instead
+warning: Erdos1153/DeBoorPinkus/DerivativeInterlacing.lean:352:8: `Polynomial.natDegree_finset_prod_X_sub_C_eq_card` has been deprecated: Use `Polynomial.natDegree_finsetProd_X_sub_C_eq_card` instead
+warning: Erdos1153/DeBoorPinkus/DerivativeInterlacing.lean:419:6: `Polynomial.eval_finset_sum` has been deprecated: Use `Polynomial.eval_finsetSum` instead
+warning: Erdos1153/DeBoorPinkus/DerivativeInterlacing.lean:526:8: `Polynomial.natDegree_finset_prod_X_sub_C_eq_card` has been deprecated: Use `Polynomial.natDegree_finsetProd_X_sub_C_eq_card` instead
+⚠ [2313/2390] Replayed Erdos1153.DeBoorPinkus.NodeSpace
+warning: Erdos1153/DeBoorPinkus/NodeSpace.lean:164:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [2314/2390] Replayed Erdos1153.DeBoorPinkus.Simplex
+warning: Erdos1153/DeBoorPinkus/Simplex.lean:461:30: `continuous_finset_sum` has been deprecated: Use `continuous_finsetSum` instead
+warning: Erdos1153/DeBoorPinkus/Simplex.lean:762:8: `continuous_finset_sum` has been deprecated: Use `continuous_finsetSum` instead
+⚠ [2435/2517] Replayed Erdos1153.DeBoorPinkus.Jacobian
+warning: Erdos1153/DeBoorPinkus/Jacobian.lean:514:4: `IsContDiffImplicitAt` has been deprecated: ContDiffAt.implicitFunction does not require this
+warning: Erdos1153/DeBoorPinkus/Jacobian.lean:521:52: `ContinuousLinearMap.one_apply` has been deprecated: Use `one_apply_eq_self` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.one_apply` to `one_apply_eq_self x`).
+warning: Erdos1153/DeBoorPinkus/Jacobian.lean:507:0: Definition `gapCriticalIsContDiffImplicitAt` is a proposition; use `theorem` instead of `def`
+
+Note: This linter can be disabled with `set_option linter.defProp false`
+warning: Erdos1153/DeBoorPinkus/Jacobian.lean:635:6: `ContinuousLinearMap.zero_apply` has been deprecated: Use `zero_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.zero_apply` to `zero_apply x`).
+warning: Erdos1153/DeBoorPinkus/Jacobian.lean:875:16: `HasFDerivAt.finset_prod` has been deprecated: Use `HasFDerivAt.finsetProd` instead
+warning: Erdos1153/DeBoorPinkus/Jacobian.lean:890:31: `Polynomial.eval_finset_sum` has been deprecated: Use `Polynomial.eval_finsetSum` instead
+warning: Erdos1153/DeBoorPinkus/Jacobian.lean:923:16: `HasDerivAt.finset_prod` has been deprecated: Use `HasDerivAt.finsetProd` instead
+warning: Erdos1153/DeBoorPinkus/Jacobian.lean:954:4: `Polynomial.eval_finset_sum` has been deprecated: Use `Polynomial.eval_finsetSum` instead
+warning: Erdos1153/DeBoorPinkus/Jacobian.lean:1056:51: Unused tactic linter: `(ext; simp)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Erdos1153/DeBoorPinkus/Jacobian.lean:1056:51: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Erdos1153/DeBoorPinkus/Jacobian.lean:1142:23: Unused tactic linter: `funext s` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Erdos1153/DeBoorPinkus/Jacobian.lean:1142:33: Unused tactic linter: `simp [coordinateNodeVelocity]` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Erdos1153/DeBoorPinkus/Jacobian.lean:1142:33: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Erdos1153/DeBoorPinkus/Jacobian.lean:1229:7: Unused tactic linter: `funext s` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Erdos1153/DeBoorPinkus/Jacobian.lean:1229:17: Unused tactic linter: `simp [coordinateLagrangeFactorValue]` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Erdos1153/DeBoorPinkus/Jacobian.lean:1229:17: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Erdos1153/DeBoorPinkus/Jacobian.lean:1257:16: `HasDerivAt.finset_prod` has been deprecated: Use `HasDerivAt.finsetProd` instead
+warning: Erdos1153/DeBoorPinkus/Jacobian.lean:1268:6: `Polynomial.eval_finset_sum` has been deprecated: Use `Polynomial.eval_finsetSum` instead
+warning: Erdos1153/DeBoorPinkus/Jacobian.lean:1285:22: Unused tactic linter: `(funext y; simp)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Erdos1153/DeBoorPinkus/Jacobian.lean:1285:22: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Erdos1153/DeBoorPinkus/Jacobian.lean:1301:6: `Polynomial.eval_finset_sum` has been deprecated: Use `Polynomial.eval_finsetSum` instead
+warning: Erdos1153/DeBoorPinkus/Jacobian.lean:1312:4: `Polynomial.eval_finset_sum` has been deprecated: Use `Polynomial.eval_finsetSum` instead
+warning: Erdos1153/DeBoorPinkus/Jacobian.lean:1332:20: Unused tactic linter: `(funext s; rfl)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Erdos1153/DeBoorPinkus/Jacobian.lean:1332:20: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Erdos1153/DeBoorPinkus/Jacobian.lean:1415:14: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [2437/2517] Replayed Erdos1153.DeBoorPinkus.Minors
+warning: Erdos1153/DeBoorPinkus/Minors.lean:491:16: `Polynomial.eval_finset_sum` has been deprecated: Use `Polynomial.eval_finsetSum` instead
+warning: Erdos1153/DeBoorPinkus/Minors.lean:535:6: `Polynomial.eval_finset_sum` has been deprecated: Use `Polynomial.eval_finsetSum` instead
+warning: Erdos1153/DeBoorPinkus/Minors.lean:866:21: `Polynomial.eval_finset_sum` has been deprecated: Use `Polynomial.eval_finsetSum` instead
+warning: Erdos1153/DeBoorPinkus/Minors.lean:1033:18: `Polynomial.eval_finset_sum` has been deprecated: Use `Polynomial.eval_finsetSum` instead
+⚠ [2439/2517] Replayed Erdos1153.DeBoorPinkus.Boundary
+warning: Erdos1153/DeBoorPinkus/Boundary.lean:265:14: This simp argument is unused:
+  Fin.le_iff_val_le_val
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [endpointLeftIndex]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Erdos1153/DeBoorPinkus/Boundary.lean:277:44: This simp argument is unused:
+  Fin.le_iff_val_le_val
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [endpointLeftIndex]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Erdos1153/DeBoorPinkus/Boundary.lean:640:14: This simp argument is unused:
+  Fin.le_iff_val_le_val
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [endpointLeftIndex]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Erdos1153/DeBoorPinkus/Boundary.lean:652:44: This simp argument is unused:
+  Fin.le_iff_val_le_val
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [endpointLeftIndex]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Erdos1153/DeBoorPinkus/Boundary.lean:1098:4: `tendsto_finset_sum` has been deprecated: Use `tendsto_finsetSum` instead
+warning: Erdos1153/DeBoorPinkus/Boundary.lean:1129:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [2440/2517] Replayed Erdos1153.DeBoorPinkus.Properness
+warning: Erdos1153/DeBoorPinkus/Properness.lean:73:6: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [2580/2611] Replayed Erdos1153.Interpolation
+warning: Erdos1153/Interpolation.lean:42:10: `Polynomial.eval_finset_sum` has been deprecated: Use `Polynomial.eval_finsetSum` instead
+⚠ [2596/2708] Replayed Erdos1153.DeBoorPinkus.GlobalHomeomorph
+warning: Erdos1153/DeBoorPinkus/GlobalHomeomorph.lean:42:28: `IsClosedMap.isCoveringMapOn_of_openPartialHomeomorph` has been deprecated: Use `IsClosedMap.isCoveringMapOn_of_isLocalHomeomorphOn` instead
+⚠ [2598/2708] Replayed Erdos1153.DeBoorPinkus.Orientation
+warning: Erdos1153/DeBoorPinkus/Orientation.lean:254:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: Erdos1153/DeBoorPinkus/Orientation.lean:289:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: Erdos1153/DeBoorPinkus/Orientation.lean:815:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Erdos1153/DeBoorPinkus/Orientation.lean:907:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: Erdos1153/DeBoorPinkus/Orientation.lean:1012:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: Erdos1153/DeBoorPinkus/Orientation.lean:1075:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Erdos1153/DeBoorPinkus/Orientation.lean:1114:18: `continuousOn_iff_continuous_restrict` has been deprecated: Use `continuousOn_iff_continuous_domRestrict` instead
+warning: Erdos1153/DeBoorPinkus/Orientation.lean:1140:6: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: Erdos1153/DeBoorPinkus/Orientation.lean:1263:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: Erdos1153/DeBoorPinkus/Orientation.lean:1264:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [2600/2708] Replayed Erdos1153.DeBoorPinkus.LocalHomeomorph
+warning: Erdos1153/DeBoorPinkus/LocalHomeomorph.lean:82:31: `Polynomial.eval_finset_sum` has been deprecated: Use `Polynomial.eval_finsetSum` instead
+warning: Erdos1153/DeBoorPinkus/LocalHomeomorph.lean:117:40: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Erdos1153/DeBoorPinkus/LocalHomeomorph.lean:388:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [2602/2708] Replayed Erdos1153.DeBoorPinkus.OrientedCharts
+warning: Erdos1153/DeBoorPinkus/OrientedCharts.lean:115:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Erdos1153/DeBoorPinkus/OrientedCharts.lean:374:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [2938/3027] Replayed Erdos1153.ClassicalBound.Mesoscopic
+warning: Erdos1153/ClassicalBound/Mesoscopic.lean:79:4: `Polynomial.eval_finset_sum` has been deprecated: Use `Polynomial.eval_finsetSum` instead
+⚠ [2941/3027] Replayed Erdos1153.ClassicalBound.PairEnergy
+warning: Erdos1153/ClassicalBound/PairEnergy.lean:151:44: `Polynomial.eval_finset_sum` has been deprecated: Use `Polynomial.eval_finsetSum` instead
+warning: Erdos1153/ClassicalBound/PairEnergy.lean:164:44: `Polynomial.eval_finset_sum` has been deprecated: Use `Polynomial.eval_finsetSum` instead
+warning: Erdos1153/ClassicalBound/PairEnergy.lean:208:4: `Polynomial.eval_finset_sum` has been deprecated: Use `Polynomial.eval_finsetSum` instead
+warning: Erdos1153/ClassicalBound/PairEnergy.lean:269:8: `two_mul_le_add_of_sq_eq_mul` has been deprecated: Use `two_mul_le_add_of_sq_le_mul` instead
+
+Note: The updated constant has a different type:
+  ∀ {R : Type u} [inst : CommSemiring R] [inst_1 : LinearOrder R] [ExistsAddOfLE R] [MulPosStrictMono R]
+    [PosMulStrictMono R] [AddLeftReflectLE R] [AddLeftMono R] {a b r : R}, 0 ≤ a → 0 ≤ b → r ^ 2 ≤ a * b → 2 * r ≤ a + b
+instead of
+  ∀ {R : Type u} [inst : CommSemiring R] [inst_1 : LinearOrder R] [ExistsAddOfLE R] [MulPosStrictMono R]
+    [PosMulStrictMono R] [AddLeftReflectLE R] [AddLeftMono R] {a b r : R}, 0 ≤ a → 0 ≤ b → r ^ 2 = a * b → 2 * r ≤ a + b
+⚠ [2942/3027] Replayed Erdos1153.ClassicalBound.Clock
+warning: Erdos1153/ClassicalBound/Clock.lean:141:8: `two_mul_le_add_of_sq_eq_mul` has been deprecated: Use `two_mul_le_add_of_sq_le_mul` instead
+
+Note: The updated constant has a different type:
+  ∀ {R : Type u} [inst : CommSemiring R] [inst_1 : LinearOrder R] [ExistsAddOfLE R] [MulPosStrictMono R]
+    [PosMulStrictMono R] [AddLeftReflectLE R] [AddLeftMono R] {a b r : R}, 0 ≤ a → 0 ≤ b → r ^ 2 ≤ a * b → 2 * r ≤ a + b
+instead of
+  ∀ {R : Type u} [inst : CommSemiring R] [inst_1 : LinearOrder R] [ExistsAddOfLE R] [MulPosStrictMono R]
+    [PosMulStrictMono R] [AddLeftReflectLE R] [AddLeftMono R] {a b r : R}, 0 ≤ a → 0 ≤ b → r ^ 2 = a * b → 2 * r ≤ a + b
+warning: Erdos1153/ClassicalBound/Clock.lean:174:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [2945/3027] Replayed Erdos1153.ClassicalBound.ArcsineBins
+warning: Erdos1153/ClassicalBound/ArcsineBins.lean:165:35: This simp argument is unused:
+  Fin.le_def
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [2949/3027] Replayed Erdos1153.ClassicalBound.EnergyPartition
+warning: Erdos1153/ClassicalBound/EnergyPartition.lean:459:77: This simp argument is unused:
+  h
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [arcsineBinLocalEnergy, assignmentFiberLocalEnergy, m, x, scale, arcsineNodeBinEmbedding]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3044/3136] Replayed Erdos1153.ClassicalBound.RieszInterpolation
+warning: Erdos1153/ClassicalBound/RieszInterpolation.lean:651:16: `Polynomial.degree_sub_lt` has been deprecated: Use `Polynomial.degree_sub_lt_left` instead
+⚠ [3045/3136] Replayed Erdos1153.ClassicalBound.ChebyshevExpansion
+warning: Erdos1153/ClassicalBound/ChebyshevExpansion.lean:61:49: `Polynomial.eval_finset_sum` has been deprecated: Use `Polynomial.eval_finsetSum` instead
+⚠ [3046/3136] Replayed Erdos1153.ClassicalBound.ChebyshevDCT
+warning: Erdos1153/ClassicalBound/ChebyshevDCT.lean:182:12: `Polynomial.eval_finset_sum` has been deprecated: Use `Polynomial.eval_finsetSum` instead
+warning: Erdos1153/ClassicalBound/ChebyshevDCT.lean:203:10: `intervalIntegral.integral_finset_sum` has been deprecated: Use `intervalIntegral.integral_finsetSum` instead
+⚠ [3508/3514] Replayed Erdos1153.JSPInterpolation.FreeNodes
+warning: Erdos1153/JSPInterpolation/FreeNodes.lean:175:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Erdos1153/JSPInterpolation/FreeNodes.lean:183:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3512/3514] Replayed Erdos1153.JSPInterpolation.Logarithmic.TrigonometricBounds
+warning: Erdos1153/JSPInterpolation/Logarithmic/TrigonometricBounds.lean:26:37: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Erdos1153/JSPInterpolation/Logarithmic/TrigonometricBounds.lean:26:37: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Erdos1153/JSPInterpolation/Logarithmic/TrigonometricBounds.lean:31:15: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3513/3514] Replayed Erdos1153.JSPInterpolation.Logarithmic.Chebyshev
+warning: Erdos1153/JSPInterpolation/Logarithmic/Chebyshev.lean:88:23: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Erdos1153/JSPInterpolation/Logarithmic/Chebyshev.lean:88:23: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Erdos1153/JSPInterpolation/Logarithmic/Chebyshev.lean:270:29: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Erdos1153/JSPInterpolation/Logarithmic/Chebyshev.lean:270:29: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Build completed successfully (3514 jobs).

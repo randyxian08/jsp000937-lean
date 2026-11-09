@@ -1,0 +1,28 @@
+{
+  "ready_for_target_checks": true,
+  "issues": [],
+  "head": "c6819617f4d8de6afcbf63da31544ce2902f7b6a",
+  "git_status": "?? Erdos1153/Review937.lean\n?? Erdos1153/Review937Specification.lean",
+  "toolchain_file": "leanprover/lean4:v4.33.0",
+  "file_sha256": {
+    "Erdos1153/JSPInterpolation/AllGaps.lean": "eb94a8fa73e7ff871a7290e8b50682b0b547dbd15600a7faf156e95eae56a253",
+    "Erdos1153/JSPInterpolation/Logarithmic.lean": "f0366634858f64104a2f15e8cdca17a7e9ec1fe03b9cdcfb794b170e0a1fa475",
+    "Erdos1153/JSPInterpolation/Regression.lean": "d80045893d0f030236dbdd2e4318bc7d7127cb0b80c1aa5f41ff9a5d9bae36a6",
+    "Erdos1153/Review937.lean": "0973ed4f572061288e6277840e8fa7bb1ac3c367f4c31ef59e73470dfad26709",
+    "lake-manifest.json": "e999c3c65dccf4e7ca4420ee8fee607b3a796ea12be9a8fa9ea6e1f2d4a387e9",
+    "lakefile.lean": null,
+    "lakefile.toml": "f366a0d81319ad8ca4313051aad533aeebe0dea7e192998a2a509d5d0e279e54",
+    "lean-toolchain": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
+  },
+  "manual_preconditions": [
+    "isolation and resource limits established",
+    "clean source build and trusted cache provenance recorded",
+    "actual dependency SHAs match fixed evidence",
+    "tool binaries are trusted and match the pinned toolchain",
+    "all untracked inputs and module/source mappings reviewed"
+  ],
+  "checker_compatibility": "not_probed; inspect pinned checker separately",
+  "manifest_sha256": "cc90f078414a328be1e3e7bbba9328832d864a786449f31dbc8f93ec58b1b4a5",
+  "script_sha256": "72a3901eea331853dbd65a843cd0b7f7b5b0255240ce1006c2cab1a51ffbea95",
+  "exit_code": 0
+}

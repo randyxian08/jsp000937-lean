@@ -1,0 +1,15 @@
+--- Review937.lean.txt attempt-01
++++ Review937.lean.txt corrected
+@@ -32,8 +32,10 @@
+   constructor
+   · intro h other
+     have hs := h other.sorted
+-    simpa only [allMinPeak, augmentedGapHeight, minPeak, NodeFamily.lebesgueOn_sorted,
+-      sorted_of_ordered] using hs
++    have hsort : allMinPeak other.sorted.toNodeFamily = allMinPeak other := by
++      rw [allMinPeak_eq_min, allMinPeak_eq_min]
++      simp only [NodeFamily.lebesgueFunction_sorted, minPeak, sorted_of_ordered]
++    rwa [hsort] at hs
+   · intro h other
+     exact h other.toNodeFamily
+ 

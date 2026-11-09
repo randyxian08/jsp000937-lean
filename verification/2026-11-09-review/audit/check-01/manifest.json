@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "project": {
+    "root": "/project",
+    "repository": "https://github.com/randyxian08/jsp000937-lean",
+    "commit": "c6819617f4d8de6afcbf63da31544ce2902f7b6a",
+    "toolchain": "leanprover/lean4:v4.33.0"
+  },
+  "problems": [
+    {
+      "id": "JSP-000937",
+      "source": "https://www.erdosproblems.com/1130",
+      "requirements": [
+        {
+          "id": "original-objective",
+          "description": "Literal Lagrange sum, n+1 interval peaks including two exterior intervals; no fixed extreme nodes.",
+          "targets": [
+            "literal-objective",
+            "endpoint-regression"
+          ],
+          "coverage": "pending"
+        },
+        {
+          "id": "classify",
+          "description": "All maximizers over every distinct-node family in [-1,1], existence and both directions of the shape/exterior-test characterization.",
+          "targets": [
+            "classification",
+            "literal-maximizer",
+            "complete"
+          ],
+          "coverage": "pending"
+        },
+        {
+          "id": "uniform-log",
+          "description": "Single positive constant independent of cardinality n>=2 and of node configuration.",
+          "targets": [
+            "logarithmic",
+            "literal-log"
+          ],
+          "coverage": "pending"
+        },
+        {
+          "id": "one-node-case",
+          "description": "Every one-node placement is a maximizer; no false logarithmic bound at n=1.",
+          "targets": [
+            "one-node"
+          ],
+          "coverage": "pending"
+        }
+      ]
+    }
+  ],
+  "targets": [
+    {
+      "id": "complete",
+      "problem": "JSP-000937",
+      "role": "theorem",
+      "module": "Erdos1153.JSPInterpolation.Logarithmic",
+      "source": "Erdos1153/JSPInterpolation/Logarithmic.lean",
+      "declaration": "JSPFreeNodes.jsp_000937"
+    },
+    {
+      "id": "classification",
+      "problem": "JSP-000937",
+      "role": "theorem",
+      "module": "Erdos1153.JSPInterpolation.AllGaps",
+      "source": "Erdos1153/JSPInterpolation/AllGaps.lean",
+      "declaration": "JSPFreeNodes.jsp_000937_classification"
+    },
+    {
+      "id": "logarithmic",
+      "problem": "JSP-000937",
+      "role": "theorem",
+      "module": "Erdos1153.JSPInterpolation.Logarithmic",
+      "source": "Erdos1153/JSPInterpolation/Logarithmic.lean",
+      "declaration": "JSPFreeNodes.jsp_000937_logarithmic"
+    },
+    {
+      "id": "one-node",
+      "problem": "JSP-000937",
+      "role": "theorem",
+      "module": "Erdos1153.JSPInterpolation.AllGaps",
+      "source": "Erdos1153/JSPInterpolation/AllGaps.lean",
+      "declaration": "JSPFreeNodes.jsp_000937_one_node"
+    },
+    {
+      "id": "endpoint-regression",
+      "problem": "JSP-000937",
+      "role": "theorem",
+      "module": "Erdos1153.JSPInterpolation.Regression",
+      "source": "Erdos1153/JSPInterpolation/Regression.lean",
+      "declaration": "JSPFreeNodes.canonical_allMinPeak_eq_one"
+    },
+    {
+      "id": "literal-objective",
+      "problem": "JSP-000937",
+      "role": "bridge",
+      "module": "Erdos1153.Review937",
+      "source": "Erdos1153/Review937.lean",
+      "declaration": "Review937.objective_eq"
+    },
+    {
+      "id": "literal-log",
+      "problem": "JSP-000937",
+      "role": "bridge",
+      "module": "Erdos1153.Review937",
+      "source": "Erdos1153/Review937.lean",
+      "declaration": "Review937.logarithmic_raw"
+    },
+    {
+      "id": "literal-maximizer",
+      "problem": "JSP-000937",
+      "role": "bridge",
+      "module": "Erdos1153.Review937",
+      "source": "Erdos1153/Review937.lean",
+      "declaration": "Review937.raw_global_maximizer_iff"
+    }
+  ]
+}
